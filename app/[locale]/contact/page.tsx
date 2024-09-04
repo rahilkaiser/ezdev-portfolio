@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
-export default function ProjectsPage() {
+export default function ContactPage() {
   const trans = useTranslations("Hero");
   const locale = useLocale();
 

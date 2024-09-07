@@ -1,11 +1,11 @@
 import React from 'react'
+import Image from 'next/image'
+import Head from 'next/head'
 
-function Hero() {
+function HeroSection() {
   return (
-    <div>
-      
-    </div>
+      <div>HeroSection</div>
   )
 }
 
-export default Hero
+export default HeroSection

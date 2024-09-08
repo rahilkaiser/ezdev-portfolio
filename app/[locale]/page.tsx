@@ -8,14 +8,13 @@ import OtherProjectsSection from "../sections/OtherProjectsSection";
 import TestimonialsSection from "../sections/TestimonialsSection";
 import ContactSection from "../sections/ContactSection";
 import Navbar from "../components/Navbar";
+import MobileNav from "../components/MobileNav";
 
 export default function Home() {
-  const trans = useTranslations("Hero");
-  const locale = useLocale();
 
   return (
     <div>
-      <Navbar />
+        <Navbar />
       <main className="container mx-auto">
         <HeroSection />
         <AboutSection />

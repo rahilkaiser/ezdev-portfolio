@@ -4,7 +4,9 @@ import Link from "next/link";
 import Logo from "./Logo";
 import links from "@/constants/navigation";
 import CTAButton from "./CTAButton";
-import MobileNav from "./MobileNav";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
 
 function Navbar() {
   const [visible, setVisible] = useState(true);
@@ -51,18 +53,19 @@ function Navbar() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Menu className="text-white cursor-pointer" />
+              <Menu className="text-accent cursor-pointer" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
+              <div className="flex flex-col space-y-12 mt-8">
                 {links.map((link, index) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-primary hover:text-accent"
+                    className="text-accent-white hover:text-accent relative group transition-colors duration-300"
                   >
-                    <span className="text-accent">0{index + 1}.</span>
+                    <span className=" text-accent">0{index + 1}. </span>
                     {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full"></span>
                   </Link>
                 ))}
                 <CTAButton text="Kontakt" link="/contact" />

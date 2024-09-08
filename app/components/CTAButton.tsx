@@ -12,7 +12,7 @@ function CTAButton({ text, link }: { text: string; link: string }) {
         transition={{ type: "spring", stiffness: 300 }}
       >
         <Link
-          className="inline-block text-accent border-2 border-accent px-6 py-2 font-bold"
+          className=" text-center w-full inline-block text-accent border-2 border-accent px-6 py-2 font-bold"
           href={link}
         >
           <span className="relative z-10 ">{text}</span>

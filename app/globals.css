@@ -52,5 +52,9 @@
             text-align: center;
         }
     }
+  :root {
+        --radius: 0.5rem;
+
+    }
 
 }

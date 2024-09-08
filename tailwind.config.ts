@@ -22,11 +22,15 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: '#1c1c22',
+        primary: '#0a192f',
         accent: {
-          DEFAULT: '#00ff99',
-          hover: '#00e187',
-        }
+          DEFAULT: '#64ffda',
+          slate: '#8892b0',
+          lightSlate: '#a8b2d1',
+          lightestSlate: '#ccd6f6',
+          white: '#e6f1ff',
+        },
+        card: '#233554',
       },
       keyframes: {
         "accordion-down": {

@@ -1,5 +1,8 @@
 {
-    "Hero": {
-        "Title": "Hello World"
+    "HeroSection": {
+        "Title": "You have an idea – we make it a reality",
+        "Subtitle": "Professional <websites>Websites</websites>, <apps>Apps</apps>, and <itSolutions>IT Solutions</itSolutions> - tailored to your needs",
+        "Description": "At EasyDEV, we work with you from the initial idea to the final implementation. We listen, advise, and develop until you're satisfied.",
+        "CTAButton": "Contact Us Now"
     }
 }

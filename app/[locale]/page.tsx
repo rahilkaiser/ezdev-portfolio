@@ -14,9 +14,9 @@ export default function Home() {
   const locale = useLocale();
 
   return (
-    <>
+    <div>
       <Navbar />
-      <main>
+      <main className="container mx-auto">
         <HeroSection />
         <AboutSection />
         <ServicesSection />
@@ -25,6 +25,6 @@ export default function Home() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-    </>
+    </div>
   );
 }

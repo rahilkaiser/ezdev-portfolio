@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import {JetBrains_Mono} from "next/font/google";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -16,14 +18,21 @@ export const metadata: Metadata = {
   publisher: "EasyDEV",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const messages = await getMessages();
+  
   return (
     <html lang="de">
-      <body className={jetBrainsMono.variable}>{children}</body>
+      <body className={jetBrainsMono.variable}>
+      <NextIntlClientProvider messages={messages}>
+        {children}
+        </NextIntlClientProvider>
+        </body>
     </html>
   );
 }

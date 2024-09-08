@@ -2,7 +2,7 @@ import React from 'react'
 
 function ServicesSection() {
   return (
-    <div>ServicesSection</div>
+    <section>ServicesSection</section>
   )
 }
 

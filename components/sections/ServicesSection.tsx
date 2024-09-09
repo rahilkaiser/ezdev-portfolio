@@ -23,14 +23,23 @@ function ServicesSection() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-secondary p-6 rounded-lg shadow-lg border border-accent"
+              className="bg-secondary p-6 rounded-lg shadow-lg border border-accent relative overflow-hidden group"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 },
+              }}
             >
-              <service.Icon className="w-12 h-12 mb-4 text-accent" />
-              <h3 className="text-2xl font-semibold mb-4 text-accent">{service.title}</h3>
-              <p className="text-slate-300 mb-6">{service.description}</p>
+              <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-500" />
+              <div className="absolute top-0 right-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500" />
+              <div className="absolute bottom-0 right-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500" />
+              <service.Icon className="w-12 h-12 mb-4 text-accent group-hover:scale-110 transition-transform duration-500" />
+              <h3 className="text-2xl font-semibold mb-4 text-accent group-hover:translate-x-2 transition-transform duration-500">{service.title}</h3>
+              <p className="text-slate-300 mb-6 group-hover:text-white transition-colors duration-300">{service.description}</p>
             </motion.div>
           ))}
         </div>

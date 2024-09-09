@@ -44,13 +44,7 @@ function Navbar() {
             >
               <span className="text-accent">0{index + 1}.</span>
               {link.name}
-              <motion.span
-                className="absolute bottom-0 left-1/2 h-0.5 bg-accent"
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.5 }}
-                style={{ originX: 0.5 }}
-              />
+              <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
             </Link>
           ))}
         </div>

@@ -6,6 +6,7 @@ import links from "@/constants/navigation";
 import CTAButton from "./CTAButton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 
 function Navbar() {
@@ -43,7 +44,13 @@ function Navbar() {
             >
               <span className="text-accent">0{index + 1}.</span>
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full"></span>
+              <motion.span
+                className="absolute bottom-0 left-1/2 h-0.5 bg-accent"
+                initial={{ width: 0 }}
+                whileHover={{ width: "100%" }}
+                transition={{ duration: 0.5 }}
+                style={{ originX: 0.5 }}
+              />
             </Link>
           ))}
         </div>

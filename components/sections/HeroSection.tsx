@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import CTAButton from "../components/CTAButton";
+
 import { useTranslations } from "next-intl";
+import CTAButton from "../shared/CTAButton";
 
 function HeroSection() {
   const t = useTranslations("HeroSection");

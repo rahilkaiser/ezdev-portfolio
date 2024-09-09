@@ -1,14 +1,14 @@
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import HeroSection from "../sections/HeroSection";
-import AboutSection from "../sections/AboutSection";
-import ServicesSection from "../sections/ServicesSection";
-import FeaturedProjectsSection from "../sections/FeaturedProjectsSection";
-import OtherProjectsSection from "../sections/OtherProjectsSection";
-import TestimonialsSection from "../sections/TestimonialsSection";
-import ContactSection from "../sections/ContactSection";
-import Navbar from "../components/Navbar";
-import MobileNav from "../components/MobileNav";
+import HeroSection from "../../components/sections/HeroSection";
+import AboutSection from "../../components/sections/AboutSection";
+import ServicesSection from "../../components/sections/ServicesSection";
+import FeaturedProjectsSection from "../../components/sections/FeaturedProjectsSection";
+import OtherProjectsSection from "../../components/sections/OtherProjectsSection";
+import TestimonialsSection from "../../components/sections/TestimonialsSection";
+import ContactSection from "../../components/sections/ContactSection";
+import Navbar from "@/components/shared/Navbar";
+
 
 export default function Home() {
 

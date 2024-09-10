@@ -107,11 +107,13 @@ export default function FeaturedProjectsSection() {
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-accent hover:text-white transition-colors duration-300 flex items-center"
+                  className="relative group text-accent transition-colors duration-300 flex items-center"
                 >
                   Projekt ansehen
                   <ExternalLink size={16} className="ml-2" />
+                  <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
                 </Link>
+                
               </div>
             </div>
           </motion.div>

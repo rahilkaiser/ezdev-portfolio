@@ -56,20 +56,24 @@ function Navbar() {
             <SheetTrigger asChild>
               <Menu className="text-accent cursor-pointer" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-12 mt-8">
+            <SheetContent 
+              side="right" 
+              className="w-[300px] sm:w-[400px] bg-primary bg-opacity-80 backdrop-filter backdrop-blur-sm border-l border-accent border-opacity-10"
+            >
+              <div className="flex flex-col space-y-8 mt-12">
                 {links.map((link, index) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-accent-white hover:text-accent relative group transition-colors duration-300"
+                    className="text-white hover:text-accent transition-colors duration-300 text-2xl font-bold"
                   >
-                    <span className=" text-accent">0{index + 1}. </span>
+                    <span className="text-accent mr-2 text-base font-normal">{(index + 1).toString().padStart(2, '0')}</span>
                     {link.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full"></span>
                   </Link>
                 ))}
-                <CTAButton text="Kontakt" link="/contact" />
+                <div className="pt-8 border-t border-accent border-opacity-20">
+                  <CTAButton text="Kontakt" link="/contact" />
+                </div>
               </div>
             </SheetContent>
           </Sheet>

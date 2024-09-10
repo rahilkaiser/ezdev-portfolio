@@ -56,7 +56,7 @@ export default function FeaturedProjectsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Unsere Innovativen Lösungen
+          Unsere Realisierten Projekte
         </motion.h2>
         {projects.map((project, index) => (
           <motion.div 
@@ -66,10 +66,8 @@ export default function FeaturedProjectsSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <motion.div 
-              className="w-full lg:w-1/2"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", damping: 10, stiffness: 600 }}
+            <div 
+              className="w-full lg:w-1/2 relative overflow-hidden group"
             >
               <Link href={project.link} target="_blank" rel="noopener noreferrer">
                 <Image 
@@ -77,40 +75,43 @@ export default function FeaturedProjectsSection() {
                   alt={project.title} 
                   width={800} 
                   height={500} 
-                  className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-accent bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
+                  <div className="text-primary text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-lg font-bold mb-2">{project.specialTech}</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span key={techIndex} className="bg-primary text-accent px-2 py-1 rounded-sm text-xs">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </Link>
-            </motion.div>
+            </div>
             <div className={`w-full lg:w-7/12 lg:absolute ${index % 2 === 0 ? 'lg:text-right lg:right-0' : 'lg:text-left lg:left-0'} lg:top-1/2 lg:transform lg:-translate-y-1/2`}>
               <p className="text-accent mb-2 text-sm lg:text-base font-semibold" id="codeFont">{project.companyName}</p>
               <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
-                <Link href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
-                  {project.title}
-                </Link>
+                {project.title}
               </h3>
               <motion.div 
-                className="bg-card p-4 lg:p-6 rounded-lg shadow-md mb-4"
+                className="bg-card bg-opacity-80 backdrop-filter backdrop-blur-sm p-4 lg:p-6 rounded-lg shadow-md mb-4 border border-accent border-opacity-10"
                 whileHover={{ boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.3)" }}
               >
                 <p className="text-sm lg:text-base">{parseDescription(project.description)}</p>
               </motion.div>
-              <ul className={`flex flex-wrap gap-2 mb-4 ${index % 2 === 0 ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                <li className="bg-accent text-primary px-2 py-1 rounded-full text-xs lg:text-sm font-semibold">{project.specialTech}</li>
-                {project.tech.map((tech, techIndex) => (
-                  <li key={techIndex} className="bg-gray-700 text-white px-2 py-1 rounded-full text-xs lg:text-sm">{tech}</li>
-                ))}
-              </ul>
-              <div className={`flex gap-4 ${index % 2 === 0 ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                <motion.div whileHover={{ scale: 1.2 }}>
-                  <Link href={project.github} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors duration-300">
-                    <Github size={20} />
-                  </Link>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.2 }}>
-                  <Link href={project.link} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors duration-300">
-                    <ExternalLink size={20} />
-                  </Link>
-                </motion.div>
+              <div className={`flex ${index % 2 === 0 ? 'lg:justify-end' : 'lg:justify-start'}`}>
+                <Link 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-accent hover:text-white transition-colors duration-300 flex items-center"
+                >
+                  Projekt ansehen
+                  <ExternalLink size={16} className="ml-2" />
+                </Link>
               </div>
             </div>
           </motion.div>

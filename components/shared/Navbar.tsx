@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import links from "@/constants/navigation";
@@ -11,18 +11,18 @@ import { motion } from "framer-motion";
 
 function Navbar() {
   const [visible, setVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const prevScrollPos = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
+      setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 10);
+      prevScrollPos.current = currentScrollPos;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  }, []); // Leere Abhängigkeitsliste
 
   return (
     <nav

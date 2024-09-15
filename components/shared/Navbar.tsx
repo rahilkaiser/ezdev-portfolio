@@ -8,7 +8,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
 
-
 function Navbar() {
   const [visible, setVisible] = useState(true);
   const prevScrollPos = useRef(0);
@@ -16,7 +15,9 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 10);
+      setVisible(
+        prevScrollPos.current > currentScrollPos || currentScrollPos < 10
+      );
       prevScrollPos.current = currentScrollPos;
     };
 
@@ -44,20 +45,24 @@ function Navbar() {
             >
               <span className="text-accent">0{index + 1}.</span>
               {link.name}
-              <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+              {/* <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" /> */}
+
+              <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-50 transition-transform duration-500 origin-left" />
+
+              <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:-scale-x-50 transition-transform duration-500 origin-left" />
             </Link>
           ))}
         </div>
         <div className="hidden md:block">
-          <CTAButton text="Kontakt" link="/contact" />
+          <CTAButton text="Kontakt" link="/contact" />    
         </div>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Menu className="text-accent cursor-pointer" />
             </SheetTrigger>
-            <SheetContent 
-              side="right" 
+            <SheetContent
+              side="right"
               className="w-[300px] sm:w-[400px] bg-primary bg-opacity-80 backdrop-filter backdrop-blur-sm border-l border-accent border-opacity-10"
             >
               <div className="flex flex-col space-y-8 mt-12">
@@ -67,7 +72,9 @@ function Navbar() {
                     href={link.href}
                     className="text-white hover:text-accent transition-colors duration-300 text-2xl font-bold"
                   >
-                    <span className="text-accent mr-2 text-base font-normal">{(index + 1).toString().padStart(2, '0')}</span>
+                    <span className="text-accent mr-2 text-base font-normal">
+                      {(index + 1).toString().padStart(2, "0")}
+                    </span>
                     {link.name}
                   </Link>
                 ))}

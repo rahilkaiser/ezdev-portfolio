@@ -7,21 +7,22 @@ import FeaturedProjectsSection from "../../components/sections/FeaturedProjectsS
 import TestimonialsSection from "../../components/sections/TestimonialsSection";
 import ContactSection from "../../components/sections/ContactSection";
 import Navbar from "@/components/shared/Navbar";
-
+import SmoothScroll from "@/components/shared/SmoothScroll";
 
 export default function Home() {
-
   return (
-    <div>
+    <>
+      <SmoothScroll>
         <Navbar />
-      <main className="container mx-auto">
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <FeaturedProjectsSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-    </div>
+        <main className="container mx-auto">
+          <HeroSection />
+          <AboutSection />
+          <ServicesSection />
+          <FeaturedProjectsSection />
+          <TestimonialsSection />
+          <ContactSection />
+        </main>
+      </SmoothScroll>
+    </>
   );
 }

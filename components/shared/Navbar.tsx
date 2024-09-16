@@ -7,10 +7,12 @@ import CTAButton from "./CTAButton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [visible, setVisible] = useState(true);
   const prevScrollPos = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,13 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []); // Leere Abhängigkeitsliste
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/' || pathname === '/de';
+    }
+    return pathname.includes(href.slice(1));
+  };
 
   return (
     <nav
@@ -41,15 +50,28 @@ function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-white hover:text-accent relative group"
+              className={`  relative group ${isActive(link.href) ? 'text-accent' : 'text-white hover:text-accent'}`}
             >
               <span className="text-accent">0{index + 1}.</span>
               {link.name}
               {/* <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" /> */}
 
-              <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-50 transition-transform duration-500 origin-left" />
+              {!isActive(link.href) && (
+                <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-50 transition-transform duration-500 origin-left" />                
+              )}
 
-              <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:-scale-x-50 transition-transform duration-500 origin-left" />
+              {!isActive(link.href) && (
+                <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:-scale-x-50 transition-transform duration-500 origin-left" />    
+              )}
+
+              {isActive(link.href) && (
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-accent origin-left" />
+              )}
+
+
+
+
+              
             </Link>
           ))}
         </div>

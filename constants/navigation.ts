@@ -1,5 +1,9 @@
 const links = [
   {
+    name: "Home",
+    href: "/",
+  },
+  {
     name: "About",
     href: "/about",
   },

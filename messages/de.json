@@ -1,8 +1,118 @@
 {
-    "HeroSection": {
-      "Title": "Du hast eine Idee – wir machen sie wahr",
-      "Subtitle": "Professionelle <websites>Websites</websites>, <apps>Apps</apps> und <itSolutions>IT-Lösungen</itSolutions> - maßgeschneidert für Ihre Bedürfnisse",
-      "Description": "Bei EasyDEV arbeiten wir mit dir von der ersten Idee bis zur finalen Umsetzung. Wir hören zu, beraten, und entwickeln so lange, bis du zufrieden bist.",
-      "CTAButton": "Jetzt Kontakt aufnehmen"
+  "HeroSection": {
+    "Title": "Du hast eine Idee – wir machen sie wahr",
+    "Subtitle": "Professionelle <websites>Websites</websites>, <apps>Apps</apps> und <itSolutions>IT-Lösungen</itSolutions> - maßgeschneidert für Ihre Bedürfnisse",
+    "Description": "Bei EasyDEV arbeiten wir mit dir von der ersten Idee bis zur finalen Umsetzung. Wir hören zu, beraten, und entwickeln so lange, bis du zufrieden bist.",
+    "CTAButton": "Jetzt Kontakt aufnehmen"
+  },
+
+  "Contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Wir freuen uns, von Ihnen zu hören. Füllen Sie das Formular aus, und wir melden uns so schnell wie möglich bei Ihnen."
+  },
+
+  "About": {
+    "title": "Über uns",
+    "subtitle": "Ihr vertrauenswürdiger Partner für maßgeschneiderte IT-Lösungen",
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Wir setzen uns dafür ein, innovative und maßgeschneiderte IT-Lösungen zu liefern, die Ihr Unternehmen voranbringen und Ihre digitale Präsenz stärken. Unser Fokus liegt dabei stets auf Ihren individuellen Bedürfnissen und Zielen."
+    },
+    "values": {
+      "clientFocus": "Kundenfokus",
+      "clientFocusDesc": "Ihre Zufriedenheit steht für uns an erster Stelle. Wir hören aufmerksam zu und arbeiten eng mit Ihnen zusammen.",
+      "quality": "Qualität",
+      "qualityDesc": "Wir liefern erstklassige Lösungen durch sorgfältige Planung, präzise Umsetzung und gründliche Tests.",
+      "trust": "Vertrauen",
+      "trustDesc": "Transparenz und Integrität sind die Grundlagen unserer Kundenbeziehungen."
+    },
+    "process": {
+      "title": "Unser Prozess",
+      "listen": "Zuhören",
+      "listenDesc": "Wir verstehen Ihre Anforderungen und Ziele im Detail.",
+      "plan": "Planen",
+      "planDesc": "Wir entwickeln eine maßgeschneiderte Strategie für Ihr Projekt.",
+      "develop": "Entwickeln",
+      "developDesc": "Wir setzen Ihre Lösung mit modernsten Technologien um.",
+      "deliver": "Liefern",
+      "deliverDesc": "Wir stellen sicher, dass Sie mit dem Endergebnis vollständig zufrieden sind."
+    },
+    "commitment": {
+      "title": "Unser Versprechen an Sie",
+      "description": "Wir verpflichten uns zu höchster Qualität, Termintreue und exzellentem Kundenservice. Ihr Erfolg ist unser Erfolg.",
+      "imageAlt": "Handschlag als Symbol für unser Versprechen"
+    },
+    "cta": {
+      "title": "Bereit, Ihr Projekt zu starten?",
+      "description": "Lassen Sie uns gemeinsam Ihre Vision in die Realität umsetzen.",
+      "button": "Kontaktieren Sie uns"
+    },
+    "approach": {
+      "title": "Unsere Arbeitsweise",
+      "description": "Wir glauben an eine offene und kollaborative Herangehensweise, die Ihre Bedürfnisse in den Mittelpunkt stellt.",
+      "transparency": "Transparenz",
+      "transparencyDesc": "Wir kommunizieren klar und offen über Fortschritte, Herausforderungen und Lösungen während des gesamten Projekts.",
+      "collaboration": "Zusammenarbeit",
+      "collaborationDesc": "Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass das Endergebnis Ihren Erwartungen entspricht und Ihre Ziele erfüllt."
+    }
+  },
+
+  "Services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Maßgeschneiderte IT-Lösungen für Ihren Erfolg",
+    "servicesTitle": "Was wir anbieten",
+    "services": {
+      "webDev": {
+        "title": "Web-Entwicklung",
+        "description": "Moderne, responsive Websites und Webanwendungen, die Ihre Online-Präsenz stärken."
+      },
+      "appDev": {
+        "title": "App-Entwicklung",
+        "description": "Native und Cross-Platform-Apps für iOS und Android, die Ihre Kunden begeistern."
+      },
+      "itSolutions": {
+        "title": "IT-Lösungen",
+        "description": "Maßgeschneiderte IT-Lösungen, die Ihre Geschäftsprozesse optimieren und digitalisieren."
+      }
+    },
+    "processTitle": "Unser Prozess",
+    "process": {
+      "listen": "Zuhören",
+      "listenDesc": "Wir verstehen Ihre Anforderungen und Ziele im Detail.",
+      "plan": "Planen",
+      "planDesc": "Wir entwickeln eine maßgeschneiderte Strategie für Ihr Projekt.",
+      "develop": "Entwickeln",
+      "developDesc": "Wir setzen Ihre Lösung mit modernsten Technologien um.",
+      "deliver": "Liefern",
+      "deliverDesc": "Wir stellen sicher, dass Sie mit dem Endergebnis vollständig zufrieden sind."
+    },
+    "benefitsTitle": "Ihre Vorteile",
+    "benefits": {
+      "customized": "Maßgeschneiderte Lösungen",
+      "customizedDesc": "Jede Lösung wird speziell auf Ihre Bedürfnisse zugeschnitten.",
+      "quality": "Höchste Qualität",
+      "qualityDesc": "Wir setzen auf modernste Technologien und Best Practices.",
+      "support": "Umfassender Support",
+      "supportDesc": "Wir stehen Ihnen auch nach Projektabschluss zur Seite."
+    },
+    "cta": {
+      "title": "Bereit, Ihr Projekt zu starten?",
+      "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.",
+      "button": "Kontaktieren Sie uns"
+    }
+  },
+
+  "Projects": {
+    "title": "Unsere Projekte",
+    "subtitle": "Entdecken Sie unsere erfolgreichen Projekte und Kundenlösungen",
+    "loadMore": "Mehr Projekte laden",
+    "testimonialsTitle": "Was unsere Kunden sagen",
+    "readMore": "Mehr lesen",
+    "close": "Schließen",
+    "cta": {
+      "title": "Bereit, Ihr Projekt zu starten?",
+      "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.",
+      "button": "Kontaktieren Sie uns"
     }
   }
+}

@@ -1,3 +1,4 @@
+"use client"
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import HeroSection from "../../components/sections/HeroSection";
@@ -7,22 +8,32 @@ import FeaturedProjectsSection from "../../components/sections/FeaturedProjectsS
 import TestimonialsSection from "../../components/sections/TestimonialsSection";
 import ContactSection from "../../components/sections/ContactSection";
 import Navbar from "@/components/shared/Navbar";
-import SmoothScroll from "@/components/shared/SmoothScroll";
+import ClientSideWrapper from "@/components/shared/ClientSideWrapper";
 
 export default function Home() {
+
+  
   return (
     <>
-      <SmoothScroll>
-        <Navbar />
-        <main className="container mx-auto">
-          <HeroSection />
+      
+      <main className="container mx-auto">
+        <HeroSection />
+        <ClientSideWrapper>
           <AboutSection />
+        </ClientSideWrapper>
+        <ClientSideWrapper>
           <ServicesSection />
+        </ClientSideWrapper>
+        <ClientSideWrapper>
           <FeaturedProjectsSection />
+        </ClientSideWrapper>
+        <ClientSideWrapper>
           <TestimonialsSection />
-          <ContactSection />
-        </main>
-      </SmoothScroll>
+        </ClientSideWrapper>
+        <ClientSideWrapper>
+          <ContactSection showTitle={true} />
+        </ClientSideWrapper>
+      </main>
     </>
   );
 }

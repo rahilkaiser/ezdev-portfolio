@@ -18,6 +18,7 @@ import {
 import { Input } from '../ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslations } from 'next-intl';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -42,7 +43,11 @@ const budgetRanges = [
   "50'000+ €"
 ];
 
-function ContactSection() {
+interface ContactSectionProps {
+  showTitle: boolean;
+}
+
+function ContactSection({ showTitle = false }: ContactSectionProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -79,6 +84,8 @@ function ContactSection() {
     { icon: <Clock className="w-6 h-6" />, title: "Öffnungszeiten", description: "Mo-Fr: 9:00 - 18:00" },
   ];
 
+  const t = useTranslations("Contact");
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -87,7 +94,7 @@ function ContactSection() {
       className="py-20 bg-gradient-to-b from-background to-background/90 text-foreground"
     >
       <div className="container mx-auto px-4 space-y-12">
-        <h2 className="text-5xl font-bold mb-16 text-center text-accent">Kontakt</h2>
+        {showTitle && (<h2 className="text-5xl font-bold mb-16 text-center text-accent">{t("title")}</h2>)}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12 order-2 lg:order-1 ">
             <Form {...form}>

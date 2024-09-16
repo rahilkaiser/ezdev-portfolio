@@ -1,3 +1,4 @@
+import Navbar from "@/components/shared/Navbar";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -30,6 +31,9 @@ export default async function RootLayout({
     <html lang="de">
       <body className={jetBrainsMono.variable}>
       <NextIntlClientProvider messages={messages}>
+        
+        <Navbar />
+        
         {children}
         </NextIntlClientProvider>
         </body>

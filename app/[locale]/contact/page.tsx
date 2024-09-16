@@ -1,14 +1,16 @@
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function ContactPage() {
-  const trans = useTranslations("Hero");
-  const locale = useLocale();
+  const t = useTranslations("Contact");
 
   return (
-    <>
-      <h1>{trans("Title")}</h1>
-      <h1>Test</h1>
-    </>
+    <main className="min-h-screen">
+      <div className="container mx-auto px-4 pt-32 ">
+        <h1 className="text-5xl font-bold mb-8 text-center text-accent">{t("title")}</h1>
+        <p className="text-lg text-center mx-auto max-w-3xl text-muted-foreground">{t("subtitle")}</p>
+        <ContactSection showTitle={false} />
+      </div>
+    </main>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/shared/SmoothScroll";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -33,5 +34,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return (
+    <html lang="de">
+      <body className={jetBrainsMono.variable}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
+    </html>
+  );
 }

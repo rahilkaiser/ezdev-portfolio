@@ -4,5 +4,49 @@
         "Subtitle": "Professional <websites>Websites</websites>, <apps>Apps</apps>, and <itSolutions>IT Solutions</itSolutions> - tailored to your needs",
         "Description": "At EasyDEV, we work with you from the initial idea to the final implementation. We listen, advise, and develop until you're satisfied.",
         "CTAButton": "Contact Us Now"
-    }
+    },
+    "Contact": {
+        "title": "Contact Us",
+        "subtitle": "We look forward to hearing from you. Fill out the form, and we'll get back to you as soon as possible."
+      },
+    "About": {
+        "title": "About Us",
+        "subtitle": "Professional IT Solutions for Your Business",
+        "mission": {
+            "title": "Our Mission",
+            "description": "Our goal is to deliver innovative and tailored IT solutions that propel your business forward and strengthen your digital presence."
+        },
+        "expertise": {
+            "webDev": "Web Development",
+            "webDevDesc": "Modern, responsive websites and web applications",
+            "appDev": "App Development",
+            "appDevDesc": "Native and cross-platform apps for mobile devices",
+            "itSolutions": "IT Solutions",
+            "itSolutionsDesc": "Customized IT solutions for your business"
+        },
+        "achievements": {
+            "title": "Our Achievements",
+            "projects": "Completed Projects",
+            "experience": "Years of Experience",
+            "satisfaction": "Client Satisfaction"
+        },
+        "approach": {
+            "title": "Our Approach",
+            "description": "We employ a structured, agile approach that focuses on transparency, flexibility, and continuous improvement.",
+            "imageAlt": "Visualization of our work process"
+        },
+        "cta": {
+            "title": "Ready for Your Next Project?",
+            "description": "Let's work together to turn your ideas into reality.",
+            "button": "Contact Us"
+        }
+    },
+    "Projects": {
+        "title": "Our Projects",
+        "subtitle": "Discover our successful projects and client solutions",
+        "loadMore": "Load More Projects",
+        "testimonialsTitle": "What Our Clients Say",
+        "readMore": "Read more",
+        "close": "Close"
+      }
 }

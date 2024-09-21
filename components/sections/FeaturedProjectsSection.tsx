@@ -50,21 +50,15 @@ export default function FeaturedProjectsSection() {
   return (
     <section className="py-20 bg-primary">
       <div className="container mx-auto px-4">
-        <motion.h2 
+        <h2 
           className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 text-accent text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
           Unsere Realisierten Projekte
-        </motion.h2>
+        </h2>
         {projects.map((project, index) => (
-          <motion.div 
+          <div 
             key={index}
             className={`relative flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:py-12 mb-20`}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <div 
               className="w-full lg:w-1/2 relative overflow-hidden group"
@@ -116,7 +110,7 @@ export default function FeaturedProjectsSection() {
                 
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
         <motion.div
           className="flex justify-center mt-16"

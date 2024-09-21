@@ -6,9 +6,12 @@ import links from "@/constants/navigation";
 import CTAButton from "./CTAButton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+/**
+ * Navbar component for the application.
+ * Provides navigation links and responsive design.
+ */
 function Navbar() {
   const [visible, setVisible] = useState(true);
   const prevScrollPos = useRef(0);
@@ -25,14 +28,56 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Leere Abhängigkeitsliste
+  }, []);
 
-  const isActive = (href: string) => {
+  /**
+   * Determines if a link is active based on the current pathname.
+   * @param {string} href - The href of the link to check.
+   * @returns {boolean} True if the link is active, false otherwise.
+   */
+  const isActive = (href: string): boolean => {
     if (href === '/') {
       return pathname === '/' || pathname === '/de';
     }
     return pathname.includes(href.slice(1));
   };
+
+  /**
+   * Renders a navigation link with appropriate styling.
+   * @param {{ name: string; href: string }} link - The link object.
+   * @param {number} index - The index of the link.
+   * @returns {JSX.Element} The rendered link component.
+   */
+  const renderNavLink = (link: { name: string; href: string }, index: number): JSX.Element => (
+    <Link
+      key={link.name}
+      href={link.href}
+      className={`relative group ${isActive(link.href) ? 'text-accent' : 'text-white hover:text-accent'}`}
+    >
+      <span className="text-accent">0{index + 1}.</span>
+      {link.name}
+      {renderLinkUnderline(link.href)}
+    </Link>
+  );
+
+  /**
+   * Renders the underline for a navigation link.
+   * @param {string} href - The href of the link.
+   * @returns {JSX.Element} The rendered underline component.
+   */
+  const renderLinkUnderline = (href: string): JSX.Element => (
+    <>
+      {!isActive(href) && (
+        <>
+          <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-50 transition-transform duration-500 origin-left" />
+          <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:-scale-x-50 transition-transform duration-500 origin-left" />
+        </>
+      )}
+      {isActive(href) && (
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-accent origin-left" />
+      )}
+    </>
+  );
 
   return (
     <nav
@@ -46,37 +91,10 @@ function Navbar() {
         </Link>
 
         <div className="hidden md:flex space-x-4 justify-between items-center gap-2">
-          {links.map((link, index) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`  relative group ${isActive(link.href) ? 'text-accent' : 'text-white hover:text-accent'}`}
-            >
-              <span className="text-accent">0{index + 1}.</span>
-              {link.name}
-              {/* <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" /> */}
-
-              {!isActive(link.href) && (
-                <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-50 transition-transform duration-500 origin-left" />                
-              )}
-
-              {!isActive(link.href) && (
-                <div className="absolute bottom-0 left-1/2 w-full h-1 bg-accent transform scale-x-0 group-hover:-scale-x-50 transition-transform duration-500 origin-left" />    
-              )}
-
-              {isActive(link.href) && (
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-accent origin-left" />
-              )}
-
-
-
-
-              
-            </Link>
-          ))}
+          {links.map(renderNavLink)}
         </div>
         <div className="hidden md:block">
-          <CTAButton text="Kontakt" link="/contact" />    
+          <CTAButton text="Kontakt" link="/contact" />
         </div>
         <div className="md:hidden">
           <Sheet>

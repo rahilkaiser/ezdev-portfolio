@@ -1,10 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl";
-import { motion } from 'framer-motion';
-import Header from "../../../components/shared/Header";
 import MissionSection from "./sections/MissionSection";
-import AchievementsSection from "./sections/AchievementsSection";
-import ApproachSection from "./sections/ApproachSection";
 import CTASection from "./sections/CTASection";
 
 export default function AboutPage() {

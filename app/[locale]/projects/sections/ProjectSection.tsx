@@ -4,7 +4,6 @@
  * This component displays a list of projects with a load more button.
  */
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Project } from '@/types';
 import ProjectCard from '@/components/shared/cards/ProjectCard';
 

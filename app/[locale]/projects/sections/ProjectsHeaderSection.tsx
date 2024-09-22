@@ -1,6 +1,4 @@
 "use client"
-import { Code, Smartphone, Server } from 'lucide-react';
-import ServiceCard from '@/components/shared/cards/ServiceCard';
 import Header from '../../../../components/shared/Header';
 import { useTranslations } from 'next-intl';
 

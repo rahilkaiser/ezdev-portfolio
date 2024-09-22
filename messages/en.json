@@ -11,7 +11,7 @@
       },
     "About": {
         "title": "About Us",
-        "subtitle": "Professional IT Solutions for Your Business",
+        "subtitle": "Custom web development, innovative app solutions, and comprehensive IT services - everything you need for sustainable digital success.",
         "mission": {
             "title": "Our Mission",
             "description": "Our goal is to deliver innovative and tailored IT solutions that propel your business forward and strengthen your digital presence."
@@ -38,7 +38,8 @@
         "cta": {
             "title": "Ready for Your Next Project?",
             "description": "Let's work together to turn your ideas into reality.",
-            "button": "Contact Us"
+            "button": "Contact Us",
+            "heroButtonText": "More about our services"
         }
     },
     "Projects": {

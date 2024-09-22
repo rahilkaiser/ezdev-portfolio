@@ -59,7 +59,7 @@
 
   "Services": {
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Maßgeschneiderte IT-Lösungen für Ihren Erfolg",
+    "subtitle": "Individuelle Webentwicklung, innovative App-Lösungen und umfassende IT-Dienstleistungen – alles, was Sie für nachhaltigen digitalen Erfolg benötigen.",
     "servicesTitle": "Was wir anbieten",
     "services": {
       "webDev": {
@@ -98,7 +98,8 @@
     "cta": {
       "title": "Bereit, Ihr Projekt zu starten?",
       "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.",
-      "button": "Kontaktieren Sie uns"
+      "button": "Kontaktieren Sie uns",
+      "heroButtonText": "Mehr über unsere Dienstleistungen"
     }
   },
 

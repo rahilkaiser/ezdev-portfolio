@@ -1,8 +1,8 @@
-import ValueCard from '@/components/shared/cards/ValueCard';
 import { fadeInUpVariants } from '@/utils/animations';
 import { motion } from 'framer-motion';
 import { Users, Star, Shield } from 'lucide-react';
-import Header from './Header';
+import Header from '../../../../components/shared/Header';
+import ServiceCard from '@/components/shared/cards/ServiceCard';
 
 interface MissionSectionProps {
   t: (key: string) => string;
@@ -21,7 +21,7 @@ export default function MissionSection({ t }: MissionSectionProps) {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {values.map((value, index) => (
-            <ValueCard key={index} {...value} delay={index * 0.1} />
+            <ServiceCard key={index} Icon={value.icon} title={value.title} description={value.description} />
           ))}
         </div>
       </div>

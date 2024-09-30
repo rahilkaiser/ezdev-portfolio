@@ -82,7 +82,7 @@ function HeroSection() {
           {t("Description")}
         </motion.p>
         <motion.div variants={itemVariants} className="mt-6 sm:mt-8">
-          <CTAButton text={t("CTAButton")} link="/contact" />
+          <CTAButton text={t("CTAButton")} link="/contact" onClick={() => {}} />
         </motion.div>
       </motion.section>
   );

@@ -86,7 +86,7 @@ export default function FeaturedProjectsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <CTAButton text="Alle Projekte ansehen" link="/projects" />
+          <CTAButton text="Alle Projekte ansehen" link="/projects" onClick={() => {}} />
         </motion.div>
       </div>
     </section>

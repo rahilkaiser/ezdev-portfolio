@@ -39,7 +39,7 @@ export default function ServicesSection() {
         <div className="mt-16 text-center">
           <p className="text-xl mb-8">{t('cta.description')}</p>
           <div className="flex justify-center">
-            <CTAButton text={t('cta.button')} link="/services" />
+            <CTAButton text={t('cta.button')} link="/services" onClick={() => {}} />
           </div>
         </div>
       </div>

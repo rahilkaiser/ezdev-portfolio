@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
  * 
  * @returns {JSX.Element} A styled button with hover effects
  */
-function CTAButton({ text, link, onClick = () => {} }: { text: string; link: string, onClick: () => void }) {
+function CTAButton({ text, link, onClick = () => {} }: { text: string; link: string, onClick: () => void}) {
   return (
     <div className="relative group">
       {/* Background element for hover effect */}

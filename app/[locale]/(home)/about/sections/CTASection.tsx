@@ -37,7 +37,7 @@ export default function CTASection({ title, description, buttonText, buttonLink 
           initial="hidden"
           animate="visible"
         >
-          <CTAButton text={buttonText} link={buttonLink} />
+          <CTAButton text={buttonText} link={buttonLink} onClick={() => {}} />
         </motion.div>
       </div>
     </section>

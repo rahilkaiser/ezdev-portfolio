@@ -63,7 +63,7 @@ function AboutSection() {
               <p className="text-base sm:text-lg mb-6 bg-primary bg-opacity-80 p-4 rounded-lg shadow-md">
                 {t('philosophy.description')}
               </p>
-              <CTAButton text={t('ctaButton')} link="/about" aria-label={t('ctaAriaLabel')} />
+              <CTAButton text={t('ctaButton')} link="/about" aria-label={t('ctaAriaLabel')} onClick={() => {}} />
             </div>
           </div>
         </div>

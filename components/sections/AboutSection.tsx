@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { AsymmetricGrid } from '@/components/shared/grid/AsymmetricGrid';
 import CTAButton from '@/components/shared/CTAButton';
 import { useTranslations } from 'next-intl';
-
+import Image from 'next/image';
 function AboutSection() {
   const [gridSize, setGridSize] = useState(12 * 6); // Standardgröße für große Bildschirme
   const { width } = useWindowSize();
@@ -46,7 +46,7 @@ function AboutSection() {
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between">
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
               <motion.div
-                className="h-48 w-48 sm:h-64 sm:w-64 bg-accent opacity-50 mx-auto lg:mx-0 overflow-hidden"
+                className="h-48 w-48 sm:h-64 sm:w-64 border-dotted border-accent border-2 mx-auto lg:mx-0 overflow-hidden"
                 initial={{ rotate: -6 }}
                 whileHover={{ 
                   rotate: 0,
@@ -54,18 +54,8 @@ function AboutSection() {
                   transition: { duration: 0.3 }
                 }}
               >
-                <motion.div
-                  className="w-full h-full"
-                  initial={{ backgroundPosition: '0% 0%' }}
-                  whileHover={{ 
-                    backgroundPosition: '100% 100%',
-                    transition: { duration: 0.3 }
-                  }}
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3Cpath d='M0 0h50v50H0zM50 50h50v50H50z' fill='%23000000' fill-opacity='0.1'/%3E%3C/svg%3E")`,
-                    backgroundSize: '20px 20px'
-                  }}
-                />
+                <div className="w-full h-full"/>
+                <Image src="/earth.avif" alt="About Section Image" fill />
               </motion.div>
             </div>
             <div className="pr-2 w-full lg:w-1/2 text-center lg:text-right">

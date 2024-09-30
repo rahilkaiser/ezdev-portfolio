@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/shared/SmoothScroll";
+import Navbar from "@/components/shared/Navbar";
+import FooterSection from "@/components/sections/FooterSection";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -37,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={jetBrainsMono.variable}>
+
         {children}
+
       </body>
     </html>
   );

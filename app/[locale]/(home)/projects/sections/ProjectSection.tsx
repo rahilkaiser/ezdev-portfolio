@@ -23,12 +23,14 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ loadMoreText }) => {
   // State to keep track of the number of visible projects
   const [visibleProjects, setVisibleProjects] = useState(3);
+  // State to store the projects data
+  const [projects, setProjects] = useState(projectsData());
 
   /**
    * Increases the number of visible projects by 3, up to the total number of projects
    */
   const loadMoreProjects = () => {
-    setVisibleProjects(prev => Math.min(prev + 3, projectsData.length));
+    setVisibleProjects(prev => Math.min(prev + 3, projects.length));
   };
 
   /**
@@ -49,12 +51,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ loadMoreText }) => {
   }, []);
 
   // Determines if there are more projects to load
-  const hasMoreProjects = visibleProjects < projectsData.length;
+  const hasMoreProjects = visibleProjects < projects.length;
 
   return (
     <section className="py-16 bg-primary">
       <div className="container mx-auto px-4 text-white">
-        {projectsData.slice(0, visibleProjects).map((project, index) => (
+        {projects.slice(0, visibleProjects).map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
         {hasMoreProjects && (

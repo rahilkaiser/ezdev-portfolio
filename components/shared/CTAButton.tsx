@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
  * 
  * @returns {JSX.Element} A styled button with hover effects
  */
-function CTAButton({ text, link }: { text: string; link: string }) {
+function CTAButton({ text, link, onClick = () => {} }: { text: string; link: string, onClick: () => void }) {
   return (
     <div className="relative group">
       {/* Background element for hover effect */}
@@ -31,6 +31,7 @@ function CTAButton({ text, link }: { text: string; link: string }) {
         <Link
           className="text-center w-full inline-block text-accent border-2 border-accent px-6 py-2 font-bold"
           href={link}
+          onClick={onClick}
         >
           <span className="relative z-10">{text}</span>
         </Link>

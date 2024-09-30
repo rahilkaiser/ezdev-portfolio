@@ -149,5 +149,38 @@
         "Ukrainian": "Ukrainian",
         "selectLanguage": "English",
         "close": "Close"
-      }
+      },
+    "Footer": {
+        "company": "Company",
+        "about": "About Us",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact",
+        "legal": "Legal",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "address": "123 Sample Street, 12345 Berlin, Germany",
+        "email": "Email",
+        "phone": "Phone",
+        "followUs": "Follow Us",
+        "allRightsReserved": "All rights reserved."
+    },
+    "PrivacyPolicy": {
+        "title": "Privacy Policy",
+        "introduction": "Protecting your personal data is important to us. In this privacy policy, we inform you about the processing of your personal data on our website.",
+        "dataCollection": {
+            "title": "Data Collection",
+            "description": "We collect personal data when you voluntarily provide it as part of your use of our website. This includes information you provide when contacting us or using our services."
+        }
+       
+    },
+    "TermsOfService": {
+        "title": "Terms of Service",
+        "introduction": "Welcome to EasyDEV. Please read these Terms of Service carefully before using our services.",
+        "acceptance": {
+            "title": "Acceptance of Terms",
+            "description": "By using our website and services, you agree to these Terms of Service."
+        }
+       
+    }
 }

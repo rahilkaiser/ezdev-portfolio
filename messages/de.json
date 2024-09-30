@@ -153,5 +153,95 @@
     "Ukrainian": "Ukrainisch",
     "selectLanguage": "Deutsch",
     "close": "Schließen"
+  },
+
+  "Footer": {
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfService": "Nutzungsbedingungen",
+    "address": "Musterstraße 123, 12345 Berlin, Deutschland",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "followUs": "Folgen Sie uns",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+
+  "PrivacyPolicy": {
+    "title": "Datenschutzerklärung",
+    "introduction": "Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. In dieser Datenschutzerklärung informieren wir Sie über die Verarbeitung Ihrer personenbezogenen Daten auf unserer Website.",
+    "dataCollection": {
+      "title": "Datenerhebung",
+      "description": "Wir erheben personenbezogene Daten, wenn Sie diese im Rahmen Ihrer Nutzung unserer Website freiwillig mitteilen. Dies umfasst Informationen, die Sie bei der Kontaktaufnahme oder der Nutzung unserer Dienste angeben."
+    },
+    "dataUse": {
+      "title": "Datennutzung",
+      "description": "Die erhobenen Daten verwenden wir, um Ihnen unsere Dienstleistungen zur Verfügung zu stellen, Ihre Anfragen zu bearbeiten und die Funktionalität unserer Website zu verbessern."
+    },
+    "dataSecurity": {
+      "title": "Datensicherheit",
+      "description": "Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder den Zugriff unberechtigter Personen zu schützen."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Unsere Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern. Sie können Ihren Browser so einstellen, dass er Sie über die Platzierung von Cookies informiert."
+    },
+    "thirdPartyServices": {
+      "title": "Dienste von Drittanbietern",
+      "description": "Wir können Dienste von Drittanbietern nutzen, um bestimmte Funktionen bereitzustellen. Diese Anbieter können eigene Datenschutzrichtlinien haben."
+    },
+    "userRights": {
+      "title": "Ihre Rechte",
+      "description": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten."
+    },
+    "changes": {
+      "title": "Änderungen",
+      "description": "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren, um sie an geänderte Rechtslagen oder bei Änderungen unseres Dienstes anzupassen."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten können Sie sich jederzeit an uns wenden."
+    }
+  },
+
+  "TermsOfService": {
+    "title": "Nutzungsbedingungen",
+    "introduction": "Willkommen bei EasyDEV. Bitte lesen Sie diese Nutzungsbedingungen sorgfältig durch, bevor Sie unsere Dienste in Anspruch nehmen.",
+    "acceptance": {
+      "title": "Annahme der Bedingungen",
+      "description": "Durch die Nutzung unserer Website und Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden."
+    },
+    "serviceDescription": {
+      "title": "Beschreibung der Dienste",
+      "description": "EasyDEV bietet Webentwicklungs- und IT-Dienstleistungen an. Die genauen Leistungen werden in individuellen Vereinbarungen festgelegt."
+    },
+    "userObligations": {
+      "title": "Pflichten des Nutzers",
+      "description": "Sie verpflichten sich, unsere Dienste nicht für illegale oder unautorisierte Zwecke zu nutzen und alle anwendbaren Gesetze und Vorschriften einzuhalten."
+    },
+    "intellectualProperty": {
+      "title": "Geistiges Eigentum",
+      "description": "Alle Inhalte und Materialien auf unserer Website sind unser Eigentum oder das unserer Lizenzgeber und durch Urheberrechte geschützt."
+    },
+    "liability": {
+      "title": "Haftungsbeschränkung",
+      "description": "Wir bemühen uns, unsere Dienste mit größtmöglicher Sorgfalt anzubieten, übernehmen jedoch keine Garantie für die ununterbrochene Verfügbarkeit oder Fehlerfreiheit."
+    },
+    "termination": {
+      "title": "Kündigung",
+      "description": "Wir behalten uns das Recht vor, den Zugang zu unseren Diensten jederzeit und aus beliebigem Grund zu beenden oder einzuschränken."
+    },
+    "changes": {
+      "title": "Änderungen der Nutzungsbedingungen",
+      "description": "Wir können diese Nutzungsbedingungen jederzeit ändern. Die fortgesetzte Nutzung unserer Dienste nach solchen Änderungen gilt als Zustimmung zu den geänderten Bedingungen."
+    },
+    "governingLaw": {
+      "title": "Anwendbares Recht",
+      "description": "Diese Nutzungsbedingungen unterliegen dem deutschen Recht und werden in Übereinstimmung mit diesem ausgelegt."
+    }
   }
 }

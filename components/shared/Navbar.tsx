@@ -30,6 +30,18 @@ function Navbar() {
   const t = useTranslations("Common");
   const locale = useLocale();
   const [isPending, startTransition] = useTransition();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +84,7 @@ function Navbar() {
       className={`relative group ${
         isActive(link.href) ? "text-accent" : "text-white hover:text-accent"
       }`}
+      onClick={() => isMobile && setIsOpen(false)}
     >
       <span className="text-accent">0{index + 1}.</span>
       {link.name}
@@ -104,7 +117,41 @@ function Navbar() {
         locale: nextLocale
       });
     });
+    if (isMobile) setIsOpen(false);
   };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  const renderLanguageSelector = () => (
+    <Select onValueChange={handleLanguageChange}>
+      <SelectTrigger className={`${isMobile ? 'w-full' : 'h-10'} bg-transparent border-none text-white hover:text-accent transition-colors duration-300 focus:ring-0 focus:ring-offset-0`}>
+        <Globe className="mr-2 h-5 w-5" />
+        <SelectValue className="uppercase font-bold" placeholder={t("selectLanguage")} />
+      </SelectTrigger>
+      <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
+        <SelectItem
+          value="de"
+          className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+        >
+          {t("German")}
+        </SelectItem>
+        <SelectItem
+          value="en"
+          className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+        >
+          {t("English")}
+        </SelectItem>
+        <SelectItem
+          value="uk"
+          className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+        >
+          {t("Ukrainian")}
+        </SelectItem>
+      </SelectContent>
+    </Select>
+  );
 
   return (
     <nav
@@ -112,49 +159,31 @@ function Navbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center mx-auto max-w-7xl">
-        <Link href="/">
+      <div className="flex justify-between items-center mx-auto max-w-7xl relative gap-12">
+        <Link className="w-max flex-1" href="/">
           <Logo />
         </Link>
 
-        <div className="hidden md:flex space-x-4 justify-center items-center gap-2">
-          {links.map(renderNavLink)}
-        </div>
+        {!isMobile && (
+          <>
+            <div className="flex justify-center items-center gap-28 flex-1">
+              <div className="flex space-x-4 justify-center items-center gap-2 flex-1">
+                {links.map(renderNavLink)}
+              </div>
+  
+              <div className="flex gap-4 items-center">
+                <div className="relative group">
+                  {renderLanguageSelector()}
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </div>
+                <CTAButton text="Kontakt" link="/contact" onClick={() => {}} />
+              </div>
+</div>
+          </>
+        )}
 
-        <div className="hidden md:flex md:gap-4 items-center ">
-          <div className="relative group">
-            <Select onValueChange={handleLanguageChange}>
-              <SelectTrigger className="h-10 bg-transparent border-none text-white hover:text-accent transition-colors duration-300 focus:ring-0 focus:ring-offset-0">
-                <Globe className="mr-2 h-5 w-5" />
-                <SelectValue className="uppercase font-bold" placeholder={t("selectLanguage")} />
-              </SelectTrigger>
-              <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
-                <SelectItem
-                  value="de"
-                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                >
-                  {t("German")}
-                </SelectItem>
-                <SelectItem
-                  value="en"
-                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                >
-                  {t("English")}
-                </SelectItem>
-                <SelectItem
-                  value="uk"
-                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                >
-                  {t("Ukrainian")}
-                </SelectItem>
-              </SelectContent>
-            </Select>
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-          </div>
-          <CTAButton text="Kontakt" link="/contact" />
-        </div>
-        <div className="md:hidden">
-          <Sheet>
+        {isMobile && (
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Menu className="text-accent cursor-pointer" />
             </SheetTrigger>
@@ -168,6 +197,7 @@ function Navbar() {
                     key={link.name}
                     href={link.href}
                     className="text-white hover:text-accent transition-colors duration-300 text-2xl font-bold"
+                    onClick={handleLinkClick}
                   >
                     <span className="text-accent mr-2 text-base font-normal">
                       {(index + 1).toString().padStart(2, "0")}
@@ -176,40 +206,15 @@ function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-8 border-t border-accent border-opacity-20">
-                  <CTAButton text="Kontakt" link="/contact" />
+                  <CTAButton text="Kontakt" link="/contact" onClick={handleLinkClick} />
                 </div>
               </div>
               <div className="mt-8">
-                <Select onValueChange={handleLanguageChange}>
-                  <SelectTrigger className="w-full bg-transparent border-accent text-white hover:bg-accent hover:text-primary transition-colors duration-300">
-                    <Globe className="mr-2 h-5 w-5" />
-                    <SelectValue placeholder={t("selectLanguage")} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
-                    <SelectItem
-                      value="de"
-                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                    >
-                      Deutsch
-                    </SelectItem>
-                    <SelectItem
-                      value="en"
-                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                    >
-                      English
-                    </SelectItem>
-                    <SelectItem
-                      value="uk"
-                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
-                    >
-                      Українська
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+                {renderLanguageSelector()}
               </div>
             </SheetContent>
           </Sheet>
-        </div>
+        )}
       </div>
     </nav>
   );

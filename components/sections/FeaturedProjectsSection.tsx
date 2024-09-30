@@ -5,39 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import CTAButton from "../shared/CTAButton";
-
-const projects = [
-  {
-    title: "KI-gestützte Datenanalyse",
-    companyName: "DataTech GmbH",
-    description: "Eine präzise Plattform, die <span className='text-accent'>maschinelles Lernen</span> und <span className='text-accent'>Big Data</span> nutzt, um tiefgreifende Einblicke in komplexe Datensätze zu gewinnen. Ideal für Unternehmen, die effiziente, datengesteuerte Entscheidungen treffen möchten.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    link: "https://ki-datenanalyse.ch",
-    github: "https://github.com/example/ki-datenanalyse",
-    tech: ["Python", "TensorFlow", "React", "AWS"],
-    specialTech: "Natural Language Processing"
-  },
-  {
-    title: "Smart City Verkehrsmanagement",
-    companyName: "UrbanFlow AG",
-    description: "Ein hochpräzises System zur Optimierung des städtischen Verkehrsflusses unter Verwendung von <span className='text-accent'>IoT-Sensoren</span> und <span className='text-accent'>prädiktiver Analytik</span>. Minimiert Staus und verbessert die Luftqualität in Großstädten signifikant.",
-    image: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    link: "https://smart-verkehr.ch",
-    github: "https://github.com/example/smart-verkehr",
-    tech: ["IoT", "Java", "Spring Boot", "MongoDB"],
-    specialTech: "Echtzeit-Datenverarbeitung"
-  },
-  {
-    title: "Blockchain-basierte Lieferkette",
-    companyName: "ChainSupply Solutions",
-    description: "Eine zuverlässige und fälschungssichere Lösung für das Supply Chain Management, die <span className='text-accent'>Blockchain-Technologie</span> nutzt. Gewährleistet die lückenlose Rückverfolgbarkeit von Produkten vom Hersteller bis zum Endverbraucher.",
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    link: "https://blockchain-supply.ch",
-    github: "https://github.com/example/blockchain-supply",
-    tech: ["Solidity", "Ethereum", "Node.js", "Web3.js"],
-    specialTech: "Smart Contracts"
-  }
-];
+import { projectsData } from "@/constants/projectsData";
 
 function parseDescription(description: string) {
   const parts = description.split(/<span className='text-accent'>|<\/span>/);
@@ -55,7 +23,7 @@ export default function FeaturedProjectsSection() {
         >
           Unsere Realisierten Projekte
         </h2>
-        {projects.map((project, index) => (
+        {projectsData().map((project, index) => (
           <div 
             key={index}
             className={`relative flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:py-12 mb-20`}

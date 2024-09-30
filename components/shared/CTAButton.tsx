@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 
 /**
  * CTAButton Component
@@ -16,6 +17,8 @@ import { motion } from "framer-motion";
  * @returns {JSX.Element} A styled button with hover effects
  */
 function CTAButton({ text, link, onClick = () => {} }: { text: string; link: string, onClick: () => void}) {
+
+  const locale = useLocale();
   return (
     <div className="relative group">
       {/* Background element for hover effect */}
@@ -31,6 +34,7 @@ function CTAButton({ text, link, onClick = () => {} }: { text: string; link: str
         <Link
           className="text-center w-full inline-block text-accent border-2 border-accent px-6 py-2 font-bold"
           href={link}
+          locale={locale}
           onClick={onClick}
         >
           <span className="relative z-10">{text}</span>

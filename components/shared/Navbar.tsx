@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect, useRef, startTransition, useTransition } from "react";
-import Link from "next/link";
+
 import Logo from "./Logo";
 import links from "@/constants/navigation";
 import CTAButton from "./CTAButton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { usePathname } from "@/navigation";
+import { Link, usePathname } from "@/navigation";
 import {
   Select,
   SelectContent,
@@ -81,6 +81,7 @@ function Navbar() {
     <Link
       key={link.name}
       href={link.href}
+      
       className={`relative group ${
         isActive(link.href) ? "text-accent" : "text-white hover:text-accent"
       }`}
@@ -160,7 +161,7 @@ function Navbar() {
       }`}
     >
       <div className="flex justify-between items-center mx-auto max-w-7xl relative gap-12">
-        <Link className="w-max flex-1" href="/">
+        <Link className="w-max flex-1" href="/" >
           <Logo />
         </Link>
 
@@ -196,6 +197,7 @@ function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    
                     className="text-white hover:text-accent transition-colors duration-300 text-2xl font-bold"
                     onClick={handleLinkClick}
                   >

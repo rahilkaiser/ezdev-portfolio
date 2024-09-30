@@ -1,13 +1,12 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { useParams } from 'next/navigation';
 
 const FooterSection: React.FC = () => {
   const t = useTranslations('Footer');
-  const { locale } = useParams();
+  const locale = useLocale();
 
   const currentYear = new Date().getFullYear();
 
@@ -18,17 +17,17 @@ const FooterSection: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">{t('company')}</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="hover:text-accent transition-colors">{t('about')}</Link></li>
-              <li><Link href="/services" className="hover:text-accent transition-colors">{t('services')}</Link></li>
-              <li><Link href="/projects" className="hover:text-accent transition-colors">{t('projects')}</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">{t('contact')}</Link></li>
+              <li><Link locale={locale} href="/about" className="hover:text-accent transition-colors">{t('about')}</Link></li>
+              <li><Link href="/services"  locale={locale}className="hover:text-accent transition-colors">{t('services')}</Link></li>
+              <li><Link href="/projects" locale={locale} className="hover:text-accent transition-colors">{t('projects')}</Link></li>
+              <li><Link href="/contact" locale={locale} className="hover:text-accent transition-colors">{t('contact')}</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">{t('legal')}</h3>
             <ul className="space-y-2">
-              <li><Link href={`/${locale}/privacy-policy`} className="hover:text-accent transition-colors">{t('privacyPolicy')}</Link></li>
-              <li><Link href={`/${locale}/terms-of-service`} className="hover:text-accent transition-colors">{t('termsOfService')}</Link></li>
+              <li><Link locale={locale} href={`/${locale}/privacy-policy`} className="hover:text-accent transition-colors">{t('privacyPolicy')}</Link></li>
+              <li><Link locale={locale} href={`/${locale}/terms-of-service`} className="hover:text-accent transition-colors">{t('termsOfService')}</Link></li>
             </ul>
           </div>
           <div>

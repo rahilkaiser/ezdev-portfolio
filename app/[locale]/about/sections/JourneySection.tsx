@@ -1,10 +1,10 @@
+"use client"
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
-interface JourneySectionProps {
-  t: (key: string) => string;
-}
+export default function JourneySection() {
 
-export default function JourneySection({ t }: JourneySectionProps) {
+  const t = useTranslations("About");
   const journeySteps = [
     { number: 1, title: t('journey.step1.title'), description: t('journey.step1.description') },
     { number: 2, title: t('journey.step2.title'), description: t('journey.step2.description') },
@@ -40,7 +40,7 @@ export default function JourneySection({ t }: JourneySectionProps) {
                   </div>
                 </div>
               </div>
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-accent flex items-center justify-center text-xl font-bold">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-accent flex items-center justify-center text-xl font-bold text-black">
                 {step.number}
               </div>
             </motion.div>

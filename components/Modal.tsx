@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface ModalProps {
   isOpen: boolean;
@@ -7,6 +8,8 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
+  const t = useTranslations('Common');
+
   if (!isOpen) return null;
 
   return (
@@ -29,7 +32,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           className="mt-4 bg-primary text-white px-4 py-2 rounded ml-auto w-full"
           onClick={onClose}
         >
-          Schließen
+          {t('close')}
         </button>
       </motion.div>
     </motion.div>

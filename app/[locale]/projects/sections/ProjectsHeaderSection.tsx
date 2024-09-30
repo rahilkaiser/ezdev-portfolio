@@ -1,13 +1,26 @@
 "use client"
 import { motion } from 'framer-motion';
-import Header from '../../../../components/shared/Header';
 import { useTranslations } from 'next-intl';
 
+/**
+ * ProjectsHeaderSection Component
+ *
+ * This component renders the header section of the Projects page.
+ * It displays a title, subtitle, and introduction with animated entrance effects.
+ *
+ * @component
+ * @param {Object} props - The component props
+ * @param {string} props.title - The main title of the projects section
+ * @param {string} props.subtitle - The subtitle of the projects section
+ * @param {string} props.introduction - A brief introduction text for the projects
+ *
+ * @returns {JSX.Element} A section containing animated title, subtitle, and introduction
+ */
 export default function ProjectsHeaderSection({title, subtitle, introduction}: {title: string, subtitle: string, introduction: string}) {
   const t = useTranslations('Projects');
 
   return (
-<section className="mt-4 flex flex-col items-center justify-center gap-4 sm:gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
+    <section className="mt-4 flex flex-col items-center justify-center gap-4 sm:gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <motion.h1 
           className="text-5xl font-bold mb-4 text-center"

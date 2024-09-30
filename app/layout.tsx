@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={jetBrainsMono.variable}>
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
       </body>
     </html>
   );

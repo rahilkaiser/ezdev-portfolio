@@ -1,3 +1,4 @@
+"use client"
 import CTAButton from '@/components/shared/CTAButton';
 import { fadeInUpVariants } from '@/utils/animations';
 import { motion } from 'framer-motion';

@@ -4,12 +4,10 @@
  * This component displays a single project card.
  */
 import React from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { Project } from '@/types';
-
 
 interface ProjectCardProps {
   project: Project;
@@ -24,11 +22,8 @@ function parseDescription(description: string) {
   }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
-  <motion.div 
+  <div 
     className={`relative flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:py-12 mb-20`}
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.2 }}
   >
     <div className="w-full lg:w-1/2 relative overflow-hidden group">
       <Link href={project.link} target="_blank" rel="noopener noreferrer">
@@ -58,12 +53,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
       <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
         {project.title}
       </h3>
-      <motion.div 
-        className="bg-card bg-opacity-80 backdrop-filter backdrop-blur-sm p-4 lg:p-6 rounded-lg shadow-md mb-4 border border-accent border-opacity-10"
-        whileHover={{ boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.3)" }}
+      <div 
+        className="bg-card bg-opacity-80 backdrop-filter backdrop-blur-sm p-4 lg:p-6 rounded-lg shadow-md mb-4 border border-accent border-opacity-10 hover:shadow-lg transition-shadow duration-300"
       >
         <p className="text-sm lg:text-base">{parseDescription(project.description)}</p>
-      </motion.div>
+      </div>
       <div className={`flex ${index % 2 === 0 ? 'lg:justify-end' : 'lg:justify-start'}`}>
         <Link 
           href={project.link} 
@@ -77,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
         </Link>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 export default ProjectCard;

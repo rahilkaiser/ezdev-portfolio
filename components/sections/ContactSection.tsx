@@ -18,7 +18,7 @@ import {
 import { Input } from '../ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -52,6 +52,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
+  const locale = useLocale();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -87,10 +88,8 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
   const t = useTranslations("Contact");
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+    <section
+
       className="py-20 bg-gradient-to-b from-background to-background/90 text-foreground"
     >
       <div className="container mx-auto px-4 space-y-12">
@@ -209,7 +208,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
         </div>
         <div className="h-[400px] rounded-xl overflow-hidden shadow-lg">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.0762142086247!2d8.539607776191611!3d47.37689997106679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a08cc0e6e41%3A0x9d56b3523a8fc3c8!2sParadeplatz%2C%208001%20Z%C3%BCrich!5e0!3m2!1sen!2sch!4v1689251461311!5m2!1sen!2sch" 
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8080692861745!2d13.384944315802905!3d52.41669997979472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a845c8a8a0b3d1%3A0x3f8a4f7b6eb5c4f0!2sPrinz-Heinrich-Stra%C3%9Fe%207A%2C%2012307%20Berlin!5e0!3m2!1s${locale}!2sde!4v1689251461311!5m2!1s${locale}!2sde`}
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -219,7 +218,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
               ></iframe>
             </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

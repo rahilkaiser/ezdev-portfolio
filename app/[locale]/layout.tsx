@@ -1,4 +1,5 @@
 import Navbar from "@/components/shared/Navbar";
+import Particles from "@/components/shared/Particles";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -30,6 +31,10 @@ export default async function RootLayout({
   return (
     <html lang="de">
       <body className={jetBrainsMono.variable}>
+      <Particles
+        className="absolute inset-0 pointer-events-none"
+        quantity={50}
+      />
       <NextIntlClientProvider messages={messages}>
         
         <Navbar />

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import { Code, Smartphone, Server } from 'lucide-react';
 
 import CTAButton from '../shared/CTAButton';
@@ -22,14 +21,9 @@ export default function ServicesSection() {
   return (
     <section className="py-20 bg-primary text-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <motion.h2 
-          className="text-4xl font-bold mb-12 text-accent text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <h2 className="text-4xl font-bold mb-12 text-accent text-center">
           {t('title')}
-        </motion.h2>
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -42,17 +36,12 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
+        <div className="mt-16 text-center">
           <p className="text-xl mb-8">{t('cta.description')}</p>
           <div className="flex justify-center">
-            <CTAButton text={t('cta.heroButtonText')} link="/services" />
+            <CTAButton text={t('cta.button')} link="/services" />
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Background pattern */}
@@ -65,4 +54,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

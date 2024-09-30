@@ -1,9 +1,10 @@
 "use client"
 import { useTranslations } from "next-intl";
 import ServicesHeaderSection from "./sections/ServicesHeaderSection";
-import ServicesOfferingsSection from "./sections/ServicesOfferingsSection";
+
 import ProcessSection from "./sections/ProcessSection";
 import CTASection from "../about/sections/CTASection";
+import ServicesOfferingsSection from "./sections/ServicesOfferingsSection";
 
 // Main Services Page component
 export default function ServicesPage() {

@@ -1,6 +1,4 @@
-import { fadeInUpVariants } from '@/utils/animations';
 import { motion } from 'framer-motion';
-
 
 interface ApproachSectionProps {
   t: (key: string) => string;
@@ -8,39 +6,38 @@ interface ApproachSectionProps {
 
 export default function ApproachSection({ t }: ApproachSectionProps) {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4 text-center">
+    <section className="py-24 px-4 bg-white/5">
+      <div className="container mx-auto">
         <motion.h2 
-          className="text-3xl font-bold mb-8"
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate="visible"
+          className="text-4xl font-bold mb-16 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
           {t("approach.title")}
         </motion.h2>
-        <motion.p 
-          className="text-lg mb-12 max-w-3xl mx-auto"
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {t("approach.description")}
-        </motion.p>
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-left">
-            <h3 className="text-xl font-semibold mb-4">{t("approach.transparency")}</h3>
-            <p>{t("approach.transparencyDesc")}</p>
-          </div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-left">
-            <h3 className="text-xl font-semibold mb-4">{t("approach.collaboration")}</h3>
-            <p>{t("approach.collaborationDesc")}</p>
-          </div>
-        </motion.div>
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0 md:space-x-12">
+          <motion.div 
+            className="md:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl font-semibold mb-6">{t("approach.passion")}</h3>
+            <p className="text-lg text-gray-300 mb-8">{t("approach.passionDesc")}</p>
+            <div className="h-1 w-24 bg-accent"></div>
+          </motion.div>
+          <motion.div 
+            className="md:w-1/2"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl font-semibold mb-6">{t("approach.freshPerspective")}</h3>
+            <p className="text-lg text-gray-300 mb-8">{t("approach.freshPerspectiveDesc")}</p>
+            <div className="h-1 w-24 bg-accent"></div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

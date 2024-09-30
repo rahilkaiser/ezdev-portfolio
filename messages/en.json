@@ -11,43 +11,142 @@
       },
     "About": {
         "title": "About Us",
-        "subtitle": "Custom web development, innovative app solutions, and comprehensive IT services - everything you need for sustainable digital success.",
+        "subtitle": "Together we shape your digital future",
+        "introduction": "EasyDEV is more than an IT company. We are your allies, standing by your side with passion and creativity. Our expertise is the key that brings your ideas to life and takes your business to new heights.",
         "mission": {
             "title": "Our Mission",
             "description": "Our goal is to deliver innovative and tailored IT solutions that propel your business forward and strengthen your digital presence."
         },
-        "expertise": {
-            "webDev": "Web Development",
-            "webDevDesc": "Modern, responsive websites and web applications",
-            "appDev": "App Development",
-            "appDevDesc": "Native and cross-platform apps for mobile devices",
-            "itSolutions": "IT Solutions",
-            "itSolutionsDesc": "Customized IT solutions for your business"
+        "values": {
+            "innovation": "Innovation",
+            "innovationDesc": "We leverage the latest technologies and creative approaches to give you a competitive edge.",
+            "quality": "Quality",
+            "qualityDesc": "We deliver first-class solutions through careful planning, precise implementation, and thorough testing.",
+            "growth": "Growth",
+            "growthDesc": "We support you in reaching your full potential and achieving sustainable growth."
         },
-        "achievements": {
-            "title": "Our Achievements",
-            "projects": "Completed Projects",
-            "experience": "Years of Experience",
-            "satisfaction": "Client Satisfaction"
+        "journey": {
+            "title": "Our Journey",
+            "step1": {
+                "title": "Foundation",
+                "description": "EasyDEV was founded with the vision of providing high-quality and accessible IT solutions."
+            },
+            "step2": {
+                "title": "Expansion",
+                "description": "We expanded our team and broadened our service offerings to meet the growing needs of our clients."
+            },
+            "step3": {
+                "title": "Innovation",
+                "description": "Today, we continue to focus on innovation and excellence to provide added value to our customers."
+            }
         },
         "approach": {
             "title": "Our Approach",
-            "description": "We employ a structured, agile approach that focuses on transparency, flexibility, and continuous improvement.",
-            "imageAlt": "Visualization of our work process"
+            "passion": "Passion for Technology",
+            "passionDesc": "Our enthusiasm for technology drives us to always develop the best solutions for our clients.",
+            "freshPerspective": "Fresh Perspective",
+            "freshPerspectiveDesc": "We bring new ideas and innovative approaches to every project to achieve optimal results."
+        },
+        "commitment": {
+            "title": "Our Promise to You",
+            "description": "We are committed to the highest quality, punctuality, and excellent customer service. Your success is our success.",
+            "imageAlt": "Handshake symbolizing our promise"
         },
         "cta": {
-            "title": "Ready for Your Next Project?",
-            "description": "Let's work together to turn your ideas into reality.",
-            "button": "Contact Us",
-            "heroButtonText": "More about our services"
-        }
+            "title": "Ready to Start Your Project?",
+            "description": "Let's work together to turn your vision into reality.",
+            "button": "Contact Us"
+        },
+        "process": {
+            "title": "Our Process",
+            "listen": "Listen",
+            "listenDesc": "We understand your requirements and goals in detail.",
+            "plan": "Plan",
+            "planDesc": "We develop a tailored strategy for your project.",
+            "develop": "Develop",
+            "developDesc": "We implement your solution using cutting-edge technologies.",
+            "deliver": "Deliver",
+            "deliverDesc": "We ensure that you are completely satisfied with the end result."
+        },
+        "description1": "EasyDEV passionately develops websites, apps, and other IT solutions. Our goal is to create innovative and user-friendly digital products that add value to your business.",
+        "description2": "With our approach, we combine functionality and aesthetics to create unique digital experiences.",
+        "description3": "Our experienced team uses cutting-edge technologies to develop tailored solutions that meet your specific requirements.",
+        "description4": "From conception to implementation, we stand by your side as a reliable partner and help you turn your digital visions into reality.",
+        "philosophy": {
+            "title": "Our Philosophy",
+            "description": "We believe in clear structures, precise implementation, and timeless design - inspired by minimalist principles that perfectly combine functionality and aesthetics while meeting modern digital needs."
+        },
+        "ctaButton": "More about us",
+        "ctaAriaLabel": "More information about EasyDEV",
+        "innovationText": "INNOVATION",
+        "innovationSubtext": "is our daily drive"
     },
     "Projects": {
         "title": "Our Projects",
         "subtitle": "Discover our successful projects and client solutions",
+        "introduction": "Here you can get an insight into our work. Each project tells a unique story of challenges and solutions.",
         "loadMore": "Load More Projects",
         "testimonialsTitle": "What Our Clients Say",
         "readMore": "Read more",
-        "close": "Close"
+        "close": "Close",
+        "cta": {
+            "title": "Ready to Start Your Project?",
+            "description": "Let's work together to bring your digital vision to life.",
+            "button": "Contact Us"
+        }
+    },
+    "Services": {
+        "title": "Our Services",
+        "subtitle": "Tailored Solutions for Your Digital Challenges",
+        "introduction": "At EasyDEV, we offer a wide range of IT services to meet your individual requirements. From web development to AI solutions - we are your partner for innovative technology solutions.",
+        "offerings": {
+            "title": "Our Offerings",
+            "websiteDev": {
+                "title": "Website Development",
+                "description": "Responsive and user-friendly websites that strengthen your online presence."
+            },
+            "webAppDev": {
+                "title": "Web App Development",
+                "description": "Scalable and powerful web applications for your business."
+            },
+            "mobileDev": {
+                "title": "Mobile App Development",
+                "description": "Native and cross-platform apps for Android and iOS."
+            },
+            "aiSolutions": {
+                "title": "AI Solutions",
+                "description": "Innovative AI-powered solutions to optimize your business processes."
+            },
+            "fullStackDev": {
+                "title": "Full-Stack Development",
+                "description": "Comprehensive development from user interface to database."
+            },
+            "customSolutions": {
+                "title": "Custom Solutions",
+                "description": "Individual IT solutions tailored precisely to your needs."
+            }
+        },
+        "process": {
+            "title": "Our Process",
+            "listen": "Listen",
+            "listenDesc": "We understand your requirements and goals in detail.",
+            "plan": "Plan",
+            "planDesc": "We develop a tailored strategy for your project.",
+            "develop": "Develop",
+            "developDesc": "We implement your solution using cutting-edge technologies.",
+            "deliver": "Deliver",
+            "deliverDesc": "We ensure that you are completely satisfied with the end result."
+        },
+        "cta": {
+            "title": "Ready to Start Your Project?",
+            "description": "Let's work together to bring your digital vision to life.",
+            "button": "Contact Us"
+        }
+    },
+    "Common": {
+        "German": "German",
+        "English": "English",
+        "Ukrainian": "Ukrainian",
+        "selectLanguage": "English"
       }
 }

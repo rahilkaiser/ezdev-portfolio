@@ -1,30 +1,45 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { Ear, PenTool, Code as CodeIcon, CheckCircle } from 'lucide-react';
 
-import { useTranslations } from 'next-intl';
-import ProcessStep from '@/components/shared/cards/ProcessStep';
+interface ProcessSectionProps {
+  t: (key: string) => string;
+}
 
-// Process Section component
-const ProcessSection = () => {
-  const t = useTranslations('Services');
+export default function ProcessSection({ t }: ProcessSectionProps) {
   const processSteps = [
-    { number: 1, title: t('process.listen'), description: t('process.listenDesc') },
-    { number: 2, title: t('process.plan'), description: t('process.planDesc') },
-    { number: 3, title: t('process.develop'), description: t('process.developDesc') },
-    { number: 4, title: t('process.deliver'), description: t('process.deliverDesc') },
+    { icon: Ear, key: 'listen' },
+    { icon: PenTool, key: 'plan' },
+    { icon: CodeIcon, key: 'develop' },
+    { icon: CheckCircle, key: 'deliver' },
   ];
 
   return (
-    <section className="py-16 bg-primary">
-      <div className="container mx-auto px-4">
-        <h2 className="text-accent text-3xl font-bold mb-16 text-center">{t("processTitle")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="py-24 px-4 bg-white/5">
+      <div className="container mx-auto">
+        <motion.h2 
+          className="text-4xl font-bold mb-16 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {t("process.title")}
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {processSteps.map((step, index) => (
-            <ProcessStep key={step.number} {...step} delay={index * 0.1} />
+            <motion.div
+              key={index}
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <step.icon className="w-16 h-16 mb-6 text-accent mx-auto" />
+              <h3 className="text-2xl font-semibold mb-4">{t(`process.${step.key}`)}</h3>
+              <p className="text-gray-300">{t(`process.${step.key}Desc`)}</p>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default ProcessSection;
+}

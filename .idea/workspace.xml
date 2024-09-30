@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="678816a8-90e3-41dc-8fee-26e31b107045" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/cody_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cody_history.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/ContactSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sections/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/HeroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sections/TestimonialsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/TestimonialsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/projects/sections/TestimonialsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/projects/sections/TestimonialsSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +36,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.CodyAccountHistoryMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyAccountsIdsRefresh&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.CodyConvertUrlToCodebaseName&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.CodyHistoryLlmMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyMigrateChatHistory-v2&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -85,6 +83,11 @@
       <workItem from="1725527881112" duration="3107000" />
       <workItem from="1725755931963" duration="118000" />
       <workItem from="1726360124400" duration="171000" />
+      <workItem from="1727032411205" duration="1120000" />
+      <workItem from="1727103038607" duration="2132000" />
+      <workItem from="1727106257931" duration="1086000" />
+      <workItem from="1727203197869" duration="2505000" />
+      <workItem from="1727276104598" duration="87000" />
     </task>
     <servers />
   </component>

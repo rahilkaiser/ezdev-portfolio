@@ -1,19 +1,9 @@
-"use client"
-import { Code, Smartphone, Server } from 'lucide-react';
-import ServiceCard from '@/components/shared/cards/ServiceCard';
-import Header from '../../../../components/shared/Header';
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
+import React from 'react'
 
-interface ServicesHeaderSectionProps {
-  title: string;
-  subtitle: string;
-  introduction: string;
-}
-
-export default function ServicesHeaderSection({ title, subtitle, introduction }: ServicesHeaderSectionProps) {
+const AboutUsHeaderSection = ({ title, subtitle, introduction }: { title: string, subtitle: string, introduction: string }) => {
   return (
-    <section className="mt-4 flex flex-col items-center justify-center gap-4 sm:gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
+<section className="mt-4 flex flex-col items-center justify-center gap-4 sm:gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <motion.h1 
           className="text-5xl font-bold mb-4 text-center"
@@ -41,5 +31,7 @@ export default function ServicesHeaderSection({ title, subtitle, introduction }:
         </motion.p>
       </div>
     </section>
-  );
+  )
 }
+
+export default AboutUsHeaderSection

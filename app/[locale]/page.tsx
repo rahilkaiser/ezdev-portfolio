@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       
-      <main className="container mx-auto">
+      <main className="container mx-auto bg-gradient-to-b from-primary to-primary-dark">
         <HeroSection />
         <ClientSideWrapper>
           <AboutSection />

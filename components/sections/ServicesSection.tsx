@@ -14,9 +14,9 @@ export default function ServicesSection() {
   const t = useTranslations('Services');
 
   const services = [
-    { title: t('services.webDev.title'), Icon: Code, description: t('services.webDev.description') },
-    { title: t('services.appDev.title'), Icon: Smartphone, description: t('services.appDev.description') },
-    { title: t('services.itSolutions.title'), Icon: Server, description: t('services.itSolutions.description') },
+    { title: t('offerings.websiteDev.title'), Icon: Code, description: t('offerings.websiteDev.description') },
+    { title: t('offerings.mobileDev.title'), Icon: Smartphone, description: t('offerings.mobileDev.description') },
+    { title: t('offerings.customSolutions.title'), Icon: Server, description: t('offerings.customSolutions.description') },
   ];
 
   return (

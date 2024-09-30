@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Star, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Testimonial } from '@/constants/testimonials';
-import { useTranslations } from 'next-intl';
-import { Button } from '@/components/ui/button';
 import Modal from '@/components/Modal';
 
 
@@ -29,7 +27,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   readMoreText,
   sectionTitle
 }) => {
-    const t = useTranslations("Projects");
   const sliderRef = useRef<Slider>(null);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
 
@@ -106,17 +103,17 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                                         <Star key={star} className="w-4 h-4 text-accent fill-current" />
                                       ))}
                                     </div>
-                                    <Button
-                                    variant={'outline'}
+                                    <button
+                                    // variant={'outline'}
                                       className="mt-2 text-white bg-card hover:bg-accent transition-colors duration-300 text-sm font-bold px-4 py-2 rounded-full flex items-center"
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         setSelectedTestimonial(testimonial);
                                       }}
                                     >
-                                      {t("readMore")}
+                                      Mehr Erfahren
                                       <ChevronRight className="h-4 w-4 ml-2" />
-                                    </Button>
+                                    </button>
                                   </div>
                                 </div>
                 </motion.div>

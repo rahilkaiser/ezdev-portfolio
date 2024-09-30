@@ -1,12 +1,22 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, startTransition, useTransition } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import links from "@/constants/navigation";
 import CTAButton from "./CTAButton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/navigation";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useRouter } from "@/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Globe } from "lucide-react";
 
 /**
  * Navbar component for the application.
@@ -16,6 +26,10 @@ function Navbar() {
   const [visible, setVisible] = useState(true);
   const prevScrollPos = useRef(0);
   const pathname = usePathname();
+  const router = useRouter();
+  const t = useTranslations("Common");
+  const locale = useLocale();
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +50,8 @@ function Navbar() {
    * @returns {boolean} True if the link is active, false otherwise.
    */
   const isActive = (href: string): boolean => {
-    if (href === '/') {
-      return pathname === '/' || pathname === '/de';
+    if (href === "/") {
+      return pathname === "/" || pathname === "/de";
     }
     return pathname.includes(href.slice(1));
   };
@@ -48,11 +62,16 @@ function Navbar() {
    * @param {number} index - The index of the link.
    * @returns {JSX.Element} The rendered link component.
    */
-  const renderNavLink = (link: { name: string; href: string }, index: number): JSX.Element => (
+  const renderNavLink = (
+    link: { name: string; href: string },
+    index: number
+  ): JSX.Element => (
     <Link
       key={link.name}
       href={link.href}
-      className={`relative group ${isActive(link.href) ? 'text-accent' : 'text-white hover:text-accent'}`}
+      className={`relative group ${
+        isActive(link.href) ? "text-accent" : "text-white hover:text-accent"
+      }`}
     >
       <span className="text-accent">0{index + 1}.</span>
       {link.name}
@@ -79,21 +98,59 @@ function Navbar() {
     </>
   );
 
+  const handleLanguageChange = (nextLocale: "de" | "en" | "uk") => {
+    startTransition(() => {
+      router.replace(pathname, {
+        locale: nextLocale
+      });
+    });
+  };
+
   return (
     <nav
       className={`bg-primary bg-opacity-80 p-6 top-0 z-50 fixed w-full backdrop-blur-md shadow-lg transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center mx-4">
+      <div className="flex justify-between items-center mx-auto max-w-7xl">
         <Link href="/">
           <Logo />
         </Link>
 
-        <div className="hidden md:flex space-x-4 justify-between items-center gap-2">
+        <div className="hidden md:flex space-x-4 justify-center items-center gap-2">
           {links.map(renderNavLink)}
         </div>
-        <div className="hidden md:block">
+
+        <div className="hidden md:flex md:gap-4 items-center ">
+          <div className="relative group">
+            <Select onValueChange={handleLanguageChange}>
+              <SelectTrigger className="h-10 bg-transparent border-none text-white hover:text-accent transition-colors duration-300 focus:ring-0 focus:ring-offset-0">
+                <Globe className="mr-2 h-5 w-5" />
+                <SelectValue className="uppercase font-bold" placeholder={t("selectLanguage")} />
+              </SelectTrigger>
+              <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
+                <SelectItem
+                  value="de"
+                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                >
+                  {t("German")}
+                </SelectItem>
+                <SelectItem
+                  value="en"
+                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                >
+                  {t("English")}
+                </SelectItem>
+                <SelectItem
+                  value="uk"
+                  className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                >
+                  {t("Ukrainian")}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+          </div>
           <CTAButton text="Kontakt" link="/contact" />
         </div>
         <div className="md:hidden">
@@ -121,6 +178,34 @@ function Navbar() {
                 <div className="pt-8 border-t border-accent border-opacity-20">
                   <CTAButton text="Kontakt" link="/contact" />
                 </div>
+              </div>
+              <div className="mt-8">
+                <Select onValueChange={handleLanguageChange}>
+                  <SelectTrigger className="w-full bg-transparent border-accent text-white hover:bg-accent hover:text-primary transition-colors duration-300">
+                    <Globe className="mr-2 h-5 w-5" />
+                    <SelectValue placeholder={t("selectLanguage")} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
+                    <SelectItem
+                      value="de"
+                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                    >
+                      Deutsch
+                    </SelectItem>
+                    <SelectItem
+                      value="en"
+                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                    >
+                      English
+                    </SelectItem>
+                    <SelectItem
+                      value="uk"
+                      className="text-white hover:bg-accent hover:text-primary transition-colors duration-300 py-2 px-4"
+                    >
+                      Українська
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </SheetContent>
           </Sheet>

@@ -37,9 +37,13 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="bg-white text-primary">
-      <ProjectsHeaderSection />
-       <TestimonialsSection 
+    <div className="bg-gradient-to-b from-primary to-primary-dark">
+      <ProjectsHeaderSection 
+        title={t("title")} 
+        subtitle={t("subtitle")} 
+        introduction={t("introduction")}
+      />
+      <TestimonialsSection 
         testimonials={testimonials} 
         onTestimonialSelect={setSelectedTestimonial} 
         readMoreText={t("readMore")}

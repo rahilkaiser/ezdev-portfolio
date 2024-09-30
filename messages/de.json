@@ -10,21 +10,53 @@
     "title": "Kontaktieren Sie uns",
     "subtitle": "Wir freuen uns, von Ihnen zu hören. Füllen Sie das Formular aus, und wir melden uns so schnell wie möglich bei Ihnen."
   },
-
   "About": {
     "title": "Über uns",
-    "subtitle": "Ihr vertrauenswürdiger Partner für maßgeschneiderte IT-Lösungen",
+    "subtitle": "Gemeinsam gestalten wir Ihre digitale Zukunft",
+    "introduction": "EasyDEV ist mehr als ein IT-Unternehmen. Wir sind Ihre Verbündeten, die mit Leidenschaft und Kreativität an Ihrer Seite stehen. Unsere Expertise ist der Schlüssel, der Ihre Ideen zum Leben erweckt und Ihr Unternehmen in neue Höhen führt.",
     "mission": {
       "title": "Unsere Mission",
-      "description": "Wir setzen uns dafür ein, innovative und maßgeschneiderte IT-Lösungen zu liefern, die Ihr Unternehmen voranbringen und Ihre digitale Präsenz stärken. Unser Fokus liegt dabei stets auf Ihren individuellen Bedürfnissen und Zielen."
+      "description": "Unser Ziel ist es, innovative und maßgeschneiderte IT-Lösungen zu liefern, die Ihr Unternehmen voranbringen und Ihre digitale Präsenz stärken."
     },
     "values": {
-      "clientFocus": "Kundenfokus",
-      "clientFocusDesc": "Ihre Zufriedenheit steht für uns an erster Stelle. Wir hören aufmerksam zu und arbeiten eng mit Ihnen zusammen.",
+      "innovation": "Innovation",
+      "innovationDesc": "Wir setzen auf neueste Technologien und kreative Lösungsansätze, um Ihnen einen Wettbewerbsvorteil zu verschaffen.",
       "quality": "Qualität",
       "qualityDesc": "Wir liefern erstklassige Lösungen durch sorgfältige Planung, präzise Umsetzung und gründliche Tests.",
-      "trust": "Vertrauen",
-      "trustDesc": "Transparenz und Integrität sind die Grundlagen unserer Kundenbeziehungen."
+      "growth": "Wachstum",
+      "growthDesc": "Wir unterstützen Sie dabei, Ihr volles Potenzial auszuschöpfen und nachhaltig zu wachsen."
+    },
+    "journey": {
+      "title": "Unsere Reise",
+      "step1": {
+        "title": "Gründung",
+        "description": "EasyDEV wurde mit der Vision gegründet, hochwertige und zugängliche IT-Lösungen anzubieten."
+      },
+      "step2": {
+        "title": "Expansion",
+        "description": "Wir haben unser Team erweitert und unser Dienstleistungsangebot ausgebaut, um den wachsenden Bedürfnissen unserer Kunden gerecht zu werden."
+      },
+      "step3": {
+        "title": "Innovation",
+        "description": "Heute setzen wir weiterhin auf Innovation und Exzellenz, um unseren Kunden einen Mehrwert zu bieten."
+      }
+    },
+    "approach": {
+      "title": "Unser Ansatz",
+      "passion": "Leidenschaft für Technologie",
+      "passionDesc": "Unsere Begeisterung für Technologie treibt uns an, stets die besten Lösungen für unsere Kunden zu entwickeln.",
+      "freshPerspective": "Frische Perspektive",
+      "freshPerspectiveDesc": "Wir bringen neue Ideen und innovative Ansätze in jedes Projekt ein, um optimale Ergebnisse zu erzielen."
+    },
+    "commitment": {
+      "title": "Unser Versprechen an Sie",
+      "description": "Wir verpflichten uns zu höchster Qualität, Termintreue und exzellentem Kundenservice. Ihr Erfolg ist unser Erfolg.",
+      "imageAlt": "Handschlag als Symbol für unser Versprechen"
+    },
+    "cta": {
+      "title": "Bereit, Ihr Projekt zu starten?",
+      "description": "Lassen Sie uns gemeinsam Ihre Vision in die Realität umsetzen.",
+      "button": "Kontaktieren Sie uns"
     },
     "process": {
       "title": "Unser Prozess",
@@ -37,46 +69,53 @@
       "deliver": "Liefern",
       "deliverDesc": "Wir stellen sicher, dass Sie mit dem Endergebnis vollständig zufrieden sind."
     },
-    "commitment": {
-      "title": "Unser Versprechen an Sie",
-      "description": "Wir verpflichten uns zu höchster Qualität, Termintreue und exzellentem Kundenservice. Ihr Erfolg ist unser Erfolg.",
-      "imageAlt": "Handschlag als Symbol für unser Versprechen"
+    "description1": "EasyDEV entwickelt mit Leidenschaft Websites, Apps und andere IT-Lösungen. Unser Ziel ist es, innovative und benutzerfreundliche digitale Produkte zu schaffen, die Ihrem Unternehmen einen Mehrwert bieten.",
+    "description2": "Mit unserem Ansatz kombinieren wir Funktionalität und Ästhetik, um einzigartige digitale Erlebnisse zu kreieren.",
+    "description3": "Unser erfahrenes Team setzt modernste Technologien ein, um maßgeschneiderte Lösungen zu entwickeln, die Ihren spezifischen Anforderungen entsprechen.",
+    "description4": "Von der Konzeption bis zur Umsetzung stehen wir Ihnen als zuverlässiger Partner zur Seite und helfen Ihnen, Ihre digitalen Visionen Realität werden zu lassen.",
+    "philosophy": {
+      "title": "Unsere Philosophie",
+      "description": "Wir glauben an klare Strukturen, präzise Umsetzung und zeitloses Design - inspiriert von minimalistischen Prinzipien, die Funktionalität und Ästhetik perfekt vereinen und gleichzeitig moderne digitale Bedürfnisse erfüllen."
     },
-    "cta": {
-      "title": "Bereit, Ihr Projekt zu starten?",
-      "description": "Lassen Sie uns gemeinsam Ihre Vision in die Realität umsetzen.",
-      "button": "Kontaktieren Sie uns"
-    },
-    "approach": {
-      "title": "Unsere Arbeitsweise",
-      "description": "Wir glauben an eine offene und kollaborative Herangehensweise, die Ihre Bedürfnisse in den Mittelpunkt stellt.",
-      "transparency": "Transparenz",
-      "transparencyDesc": "Wir kommunizieren klar und offen über Fortschritte, Herausforderungen und Lösungen während des gesamten Projekts.",
-      "collaboration": "Zusammenarbeit",
-      "collaborationDesc": "Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass das Endergebnis Ihren Erwartungen entspricht und Ihre Ziele erfüllt."
-    }
+    "ctaButton": "Mehr über uns",
+    "ctaAriaLabel": "Mehr Informationen über EasyDEV",
+    "innovationText": "INNOVATION",
+    "innovationSubtext": "ist unser täglicher Antrieb"
   },
 
   "Services": {
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Individuelle Webentwicklung, innovative App-Lösungen und umfassende IT-Dienstleistungen – alles, was Sie für nachhaltigen digitalen Erfolg benötigen.",
-    "servicesTitle": "Was wir anbieten",
-    "services": {
-      "webDev": {
-        "title": "Web-Entwicklung",
-        "description": "Moderne, responsive Websites und Webanwendungen, die Ihre Online-Präsenz stärken."
+    "subtitle": "Maßgeschneiderte Lösungen für Ihre digitalen Herausforderungen",
+    "introduction": "Bei EasyDEV bieten wir ein breites Spektrum an IT-Dienstleistungen, um Ihren individuellen Anforderungen gerecht zu werden. Von der Webentwicklung bis hin zu KI-Lösungen - wir sind Ihr Partner für innovative Technologielösungen.",
+    "offerings": {
+      "title": "Unsere Angebote",
+      "websiteDev": {
+        "title": "Website-Entwicklung",
+        "description": "Responsive und benutzerfreundliche Websites, die Ihre Online-Präsenz stärken."
       },
-      "appDev": {
-        "title": "App-Entwicklung",
-        "description": "Native und Cross-Platform-Apps für iOS und Android, die Ihre Kunden begeistern."
+      "webAppDev": {
+        "title": "Web-App-Entwicklung",
+        "description": "Skalierbare und leistungsstarke Webanwendungen für Ihr Unternehmen."
       },
-      "itSolutions": {
-        "title": "IT-Lösungen",
-        "description": "Maßgeschneiderte IT-Lösungen, die Ihre Geschäftsprozesse optimieren und digitalisieren."
+      "mobileDev": {
+        "title": "Mobile App-Entwicklung",
+        "description": "Native und Cross-Platform-Apps für Android und iOS."
+      },
+      "aiSolutions": {
+        "title": "KI-Lösungen",
+        "description": "Innovative KI-gestützte Lösungen zur Optimierung Ihrer Geschäftsprozesse."
+      },
+      "fullStackDev": {
+        "title": "Full-Stack-Entwicklung",
+        "description": "Ganzheitliche Entwicklung von der Benutzeroberfläche bis zur Datenbank."
+      },
+      "customSolutions": {
+        "title": "Maßgeschneiderte Lösungen",
+        "description": "Individuelle IT-Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind."
       }
     },
-    "processTitle": "Unser Prozess",
     "process": {
+      "title": "Unser Prozess",
       "listen": "Zuhören",
       "listenDesc": "Wir verstehen Ihre Anforderungen und Ziele im Detail.",
       "plan": "Planen",
@@ -86,26 +125,17 @@
       "deliver": "Liefern",
       "deliverDesc": "Wir stellen sicher, dass Sie mit dem Endergebnis vollständig zufrieden sind."
     },
-    "benefitsTitle": "Ihre Vorteile",
-    "benefits": {
-      "customized": "Maßgeschneiderte Lösungen",
-      "customizedDesc": "Jede Lösung wird speziell auf Ihre Bedürfnisse zugeschnitten.",
-      "quality": "Höchste Qualität",
-      "qualityDesc": "Wir setzen auf modernste Technologien und Best Practices.",
-      "support": "Umfassender Support",
-      "supportDesc": "Wir stehen Ihnen auch nach Projektabschluss zur Seite."
-    },
     "cta": {
       "title": "Bereit, Ihr Projekt zu starten?",
       "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.",
-      "button": "Kontaktieren Sie uns",
-      "heroButtonText": "Mehr über unsere Dienstleistungen"
+      "button": "Kontaktieren Sie uns"
     }
   },
 
   "Projects": {
     "title": "Unsere Projekte",
     "subtitle": "Entdecken Sie unsere erfolgreichen Projekte und Kundenlösungen",
+    "introduction": "Hier finden Sie einen Einblick in unsere Arbeit. Jedes Projekt erzählt eine einzigartige Geschichte von Herausforderungen und Lösungen.",
     "loadMore": "Mehr Projekte laden",
     "testimonialsTitle": "Was unsere Kunden sagen",
     "readMore": "Mehr lesen",
@@ -115,5 +145,12 @@
       "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.",
       "button": "Kontaktieren Sie uns"
     }
+  },
+
+  "Common": {
+    "German": "Deutsch",
+    "English": "Englisch",
+    "Ukrainian": "Ukrainisch",
+    "selectLanguage": "Deutsch"
   }
 }

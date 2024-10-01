@@ -12,23 +12,17 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EasyDEV",
-  description:
-    "Professionelle Webentwicklung: SEO-optimierte Websites, Shopify E-Commerce-Lösungen und maßgeschneiderte App-Entwicklung. Steigern Sie Ihre Online-Präsenz mit unserer Expertise.",
-  keywords: [
-    "Webentwicklung",
-    "SEO",
-    "Shopify",
-    "E-Commerce",
-    "App-Entwicklung",
-    "Professionelle Webentwicklung",
-    "SEO-optimierte Websites",
-    "Shopify E-Commerce-Lösungen",
-    "maßgeschneiderte App-Entwicklung",
+  metadataBase: new URL('https://easydev.de'),
+  icons: [
+    { rel: 'apple-touch-icon', sizes: '180x180', url: '/apple-touch-icon.png' },
+    { rel: 'icon', url: '/favicon.ico', sizes: '48x48' },
+    { rel: 'icon', url: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
+    { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
   ],
-  authors: [{ name: "EasyDEV", url: "https://easydev.com" }],
-  creator: "EasyDEV",
-  publisher: "EasyDEV",
+  manifest: '/site.webmanifest',
+  other: {
+    'msapplication-TileColor': '#da532c',
+  },
 };
 
 export default function RootLayout({
@@ -38,10 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+
+      </head>
       <body className={jetBrainsMono.variable}>
-
         {children}
-
       </body>
     </html>
   );

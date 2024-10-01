@@ -67,7 +67,7 @@ export default function JourneySection() {
                 </div>
               </div>
               <div 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center text-lg sm:text-xl font-bold text-black">
+                className="absolute top-0 md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center text-lg sm:text-xl font-bold text-black">
                 {step.number}
               </div>
             </motion.div>

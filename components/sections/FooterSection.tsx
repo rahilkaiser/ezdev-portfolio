@@ -3,9 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { companyDetails } from '@/constants/companyDetails';
 
 const FooterSection: React.FC = () => {
   const t = useTranslations('Footer');
+  const contactTranslations = useTranslations('Contact');
   const locale = useLocale();
 
   const currentYear = new Date().getFullYear();
@@ -32,9 +34,9 @@ const FooterSection: React.FC = () => {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">{t('contact')}</h3>
-            <p>{t('address')}</p>
-            <p>{t('email')}: info@easydev.com</p>
-            <p>{t('phone')}: +49 123 456789</p>
+            <p>{contactTranslations('addressValue')}</p>
+            <p>{t('email')}: {companyDetails[1].description}</p>
+            <p>{t('phone')}: {companyDetails[0].description}</p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">{t('followUs')}</h3>

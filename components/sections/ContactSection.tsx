@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { FaSpinner } from 'react-icons/fa';
 
@@ -19,12 +18,20 @@ import { Input } from '../ui/input';
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLocale, useTranslations } from 'next-intl';
+import { companyDetails } from '@/constants/companyDetails';
 
 const budgetRanges = [
-  "5'000 - 10'000 €",
-  "10'000 - 20'000 €",
-  "20'000 - 50'000 €",
-  "50'000+ €"
+  "500 - 1000 €",
+  "1000 - 2500 €",
+  "2500 - 5000 €",
+  "5000+ €"
+];
+
+const icons = [
+  <Phone className="w-6 h-6" />,
+  <Mail className="w-6 h-6" />,
+  <MapPin className="w-6 h-6" />,
+  <Clock className="w-6 h-6" />
 ];
 
 interface ContactSectionProps {
@@ -80,12 +87,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
     }, 2000);
   }
 
-  const companyDetails = [
-    { icon: <Phone className="w-6 h-6" />, title: t('phone'), description: "+41 123 456 789" },
-    { icon: <Mail className="w-6 h-6" />, title: t('email'), description: "info@example.com" },
-    { icon: <MapPin className="w-6 h-6" />, title: t('address'), description: t('addressValue') },
-    { icon: <Clock className="w-6 h-6" />, title: t('openingHours'), description: t('openingHoursValue') },
-  ];
+
 
   return (
     <section
@@ -193,11 +195,15 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   className="flex items-start space-x-4"
                 >
                   <div className="p-3 bg-accent/10 rounded-full text-accent">
-                    {item.icon}
+                    {icons[index]}
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <h4 className="font-medium text-lg">{t(item.title)}</h4>
+                    <p className="text-muted-foreground">{
+                      
+                     ["email", "phone"].includes(item.title) ? item.description : t(item.description)
+                    
+                    }</p>
                   </div>
                 </div>
               ))}

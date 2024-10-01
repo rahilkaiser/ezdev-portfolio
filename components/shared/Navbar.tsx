@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, useEffect, useRef, startTransition, useTransition } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  startTransition,
+  useTransition,
+} from "react";
 
 import Logo from "./Logo";
 import links from "@/constants/navigation";
@@ -81,7 +87,6 @@ function Navbar() {
     <Link
       key={link.name}
       href={link.href}
-      
       className={`relative group ${
         isActive(link.href) ? "text-accent" : "text-white hover:text-accent"
       }`}
@@ -115,7 +120,7 @@ function Navbar() {
   const handleLanguageChange = (nextLocale: "de" | "en" | "uk") => {
     startTransition(() => {
       router.replace(pathname, {
-        locale: nextLocale
+        locale: nextLocale,
       });
     });
     if (isMobile) setIsOpen(false);
@@ -127,9 +132,16 @@ function Navbar() {
 
   const renderLanguageSelector = () => (
     <Select onValueChange={handleLanguageChange}>
-      <SelectTrigger className={`${isMobile ? 'w-full' : 'h-10'} bg-transparent border-none text-white hover:text-accent transition-colors duration-300 focus:ring-0 focus:ring-offset-0`}>
+      <SelectTrigger
+        className={`${
+          isMobile ? "w-full" : "h-10"
+        } bg-transparent border-none text-white hover:text-accent transition-colors duration-300 focus:ring-0 focus:ring-offset-0`}
+      >
         <Globe className="mr-2 h-5 w-5" />
-        <SelectValue className="uppercase font-bold" placeholder={t("selectLanguage")} />
+        <SelectValue
+          className="uppercase font-bold"
+          placeholder={t("selectLanguage")}
+        />
       </SelectTrigger>
       <SelectContent className="bg-primary border-accent rounded-md overflow-hidden">
         <SelectItem
@@ -161,26 +173,25 @@ function Navbar() {
       }`}
     >
       <div className="flex justify-between items-center mx-auto max-w-7xl relative gap-12">
-        <Link className="w-max flex-1" href="/" >
+        <Link className="w-max flex-1" href="/">
           <Logo />
         </Link>
 
         {!isMobile && (
-          <>
-            <div className="flex justify-center items-center gap-28 flex-1">
-              <div className="flex space-x-4 justify-center items-center gap-2 flex-1">
-                {links.map(renderNavLink)}
+          <div className="flex space-x-4 justify-center items-center gap-2 flex-1">
+            {links.map(renderNavLink)}
+          </div>
+        )}
+        {!isMobile && (
+          <div className="flex justify-center items-center gap-28 flex-1">
+            <div className="flex gap-4 items-center">
+              <div className="relative group">
+                {renderLanguageSelector()}
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               </div>
-  
-              <div className="flex gap-4 items-center">
-                <div className="relative group">
-                  {renderLanguageSelector()}
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                </div>
-                <CTAButton text="Kontakt" link="/contact" onClick={() => {}} />
-              </div>
-</div>
-          </>
+              <CTAButton text="Kontakt" link="/contact" onClick={() => {}} />
+            </div>
+          </div>
         )}
 
         {isMobile && (
@@ -197,7 +208,6 @@ function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    
                     className="text-white hover:text-accent transition-colors duration-300 text-2xl font-bold"
                     onClick={handleLinkClick}
                   >
@@ -208,12 +218,14 @@ function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-8 border-t border-accent border-opacity-20">
-                  <CTAButton text="Kontakt" link="/contact" onClick={handleLinkClick} />
+                  <CTAButton
+                    text="Kontakt"
+                    link="/contact"
+                    onClick={handleLinkClick}
+                  />
                 </div>
               </div>
-              <div className="mt-8">
-                {renderLanguageSelector()}
-              </div>
+              <div className="mt-8">{renderLanguageSelector()}</div>
             </SheetContent>
           </Sheet>
         )}

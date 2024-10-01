@@ -20,22 +20,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLocale, useTranslations } from 'next-intl';
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name muss mindestens 2 Zeichen lang sein.",
-  }),
-  email: z.string().email({
-    message: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-  }),
-  phone: z.string().optional(),
-  budget: z.string({
-    required_error: "Bitte wählen Sie einen Budgetbereich aus.",
-  }),
-  message: z.string().min(10, {
-    message: "Die Nachricht muss mindestens 10 Zeichen lang sein.",
-  }),
-});
-
 const budgetRanges = [
   "5'000 - 10'000 €",
   "10'000 - 20'000 €",
@@ -53,6 +37,24 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
   const [error, setError] = useState(false);
 
   const locale = useLocale();
+  const t = useTranslations('Contact');
+
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: t('nameValidation'),
+    }),
+    email: z.string().email({
+      message: t('emailValidation'),
+    }),
+    phone: z.string().optional(),
+    budget: z.string({
+      required_error: t('budgetValidation'),
+    }),
+    message: z.string().min(10, {
+      message: t('messageValidation'),
+    }),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -79,13 +81,11 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
   }
 
   const companyDetails = [
-    { icon: <Phone className="w-6 h-6" />, title: "Telefon", description: "+41 123 456 789" },
-    { icon: <Mail className="w-6 h-6" />, title: "E-Mail", description: "info@example.com" },
-    { icon: <MapPin className="w-6 h-6" />, title: "Adresse", description: "Musterstrasse 123, 8000 Zürich" },
-    { icon: <Clock className="w-6 h-6" />, title: "Öffnungszeiten", description: "Mo-Fr: 9:00 - 18:00" },
+    { icon: <Phone className="w-6 h-6" />, title: t('phone'), description: "+41 123 456 789" },
+    { icon: <Mail className="w-6 h-6" />, title: t('email'), description: "info@example.com" },
+    { icon: <MapPin className="w-6 h-6" />, title: t('address'), description: t('addressValue') },
+    { icon: <Clock className="w-6 h-6" />, title: t('openingHours'), description: t('openingHoursValue') },
   ];
-
-  const t = useTranslations("Contact");
 
   return (
     <section
@@ -93,7 +93,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
       className="py-20 bg-gradient-to-b from-background to-background/90 text-foreground"
     >
       <div className="container mx-auto px-4 space-y-12">
-        {showTitle && (<h2 className="text-5xl font-bold mb-16 text-center text-accent">{t("title")}</h2>)}
+        {showTitle && (<h2 className="text-5xl font-bold mb-16 text-center text-accent">{t('title')}</h2>)}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12 order-2 lg:order-1 ">
             <Form {...form}>
@@ -104,7 +104,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Name" {...field} className={`bg-card/50  ${form.formState.dirtyFields.name ? 'border-accent' : 'border-accent/20'}`} />
+                        <Input placeholder={t('namePlaceholder')} {...field} className={`bg-card/50  ${form.formState.dirtyFields.name ? 'border-accent' : 'border-accent/20'}`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -116,7 +116,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input type="email" placeholder="E-Mail" {...field} className={`bg-card/50  ${form.formState.dirtyFields.email ? 'border-accent' : 'border-accent/20'}`} />
+                        <Input type="email" placeholder={t('emailPlaceholder')} {...field} className={`bg-card/50  ${form.formState.dirtyFields.email ? 'border-accent' : 'border-accent/20'}`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -128,7 +128,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Telefon" {...field} className={`bg-card/50  ${form.formState.dirtyFields.phone ? 'border-accent' : 'border-accent/20'}`} />
+                        <Input placeholder={t('phonePlaceholder')} {...field} className={`bg-card/50  ${form.formState.dirtyFields.phone ? 'border-accent' : 'border-accent/20'}`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -142,7 +142,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="bg-card/50 border-accent/20">
-                            <SelectValue placeholder="Wählen Sie einen Budgetbereich" />
+                            <SelectValue placeholder={t('budgetPlaceholder')} />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -162,7 +162,7 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                     <FormItem>
                       <FormControl>
                         <Textarea
-                          placeholder="Ihre Nachricht"
+                          placeholder={t('messagePlaceholder')}
                           {...field}
                           className="h-32 bg-card/50 border-accent/20"
                         />
@@ -178,10 +178,10 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   disabled={isLoading}
                 >
                   {isLoading ? <FaSpinner className="animate-spin mr-2" /> : null}
-                  {isLoading ? 'Wird gesendet...' : 'Nachricht senden'}
+                  {isLoading ? t('sendingMessage') : t('sendMessage')}
                 </Button>
-                {success && <p className="text-sm text-accent">Nachricht erfolgreich gesendet!</p>}
-                {error && <p className="text-sm text-destructive">Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>}
+                {success && <p className="text-sm text-accent">{t('successMessage')}</p>}
+                {error && <p className="text-sm text-destructive">{t('errorMessage')}</p>}
               </form>
             </Form>
           </div>

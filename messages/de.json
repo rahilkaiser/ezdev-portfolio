@@ -8,7 +8,26 @@
 
   "Contact": {
     "title": "Kontaktieren Sie uns",
-    "subtitle": "Wir freuen uns, von Ihnen zu hören. Füllen Sie das Formular aus, und wir melden uns so schnell wie möglich bei Ihnen."
+    "subtitle": "Wir freuen uns, von Ihnen zu hören. Füllen Sie das Formular aus, und wir melden uns so schnell wie möglich bei Ihnen.",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "E-Mail",
+    "phonePlaceholder": "Telefon",
+    "budgetPlaceholder": "Wählen Sie einen Budgetbereich",
+    "messagePlaceholder": "Ihre Nachricht",
+    "sendMessage": "Nachricht senden",
+    "sendingMessage": "Wird gesendet...",
+    "successMessage": "Nachricht erfolgreich gesendet!",
+    "errorMessage": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "nameValidation": "Name muss mindestens 2 Zeichen lang sein.",
+    "emailValidation": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "budgetValidation": "Bitte wählen Sie einen Budgetbereich aus.",
+    "messageValidation": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "addressValue": "Musterstraße 123, 12345 Berlin, Deutschland",
+    "openingHours": "Öffnungszeiten",
+    "openingHoursValue": "Mo-Fr: 9:00 - 18:00"
   },
   "About": {
     "title": "Über uns",

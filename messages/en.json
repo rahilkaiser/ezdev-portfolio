@@ -7,7 +7,26 @@
     },
     "Contact": {
         "title": "Contact Us",
-        "subtitle": "We look forward to hearing from you. Fill out the form, and we'll get back to you as soon as possible."
+        "subtitle": "We look forward to hearing from you. Fill out the form, and we'll get back to you as soon as possible.",
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "Email",
+        "phonePlaceholder": "Phone",
+        "budgetPlaceholder": "Select a budget range",
+        "messagePlaceholder": "Your message",
+        "sendMessage": "Send Message",
+        "sendingMessage": "Sending...",
+        "successMessage": "Message sent successfully!",
+        "errorMessage": "An error occurred. Please try again.",
+        "nameValidation": "Name must be at least 2 characters long.",
+        "emailValidation": "Please enter a valid email address.",
+        "budgetValidation": "Please select a budget range.",
+        "messageValidation": "Message must be at least 10 characters long.",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "addressValue": "123 Sample Street, 12345 Berlin, Germany",
+        "openingHours": "Opening Hours",
+        "openingHoursValue": "Mon-Fri: 9:00 AM - 6:00 PM"
       },
     "About": {
         "title": "About Us",

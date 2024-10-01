@@ -28,10 +28,10 @@ const budgetRanges = [
 ];
 
 const icons = [
-  <Phone className="w-6 h-6" />,
-  <Mail className="w-6 h-6" />,
-  <MapPin className="w-6 h-6" />,
-  <Clock className="w-6 h-6" />
+  <Phone key="phone" className="w-6 h-6" />,
+  <Mail key="mail" className="w-6 h-6" />,
+  <MapPin key="mapPin" className="w-6 h-6" />,
+  <Clock key="clock" className="w-6 h-6" />
 ];
 
 interface ContactSectionProps {
@@ -200,7 +200,6 @@ function ContactSection({ showTitle = false }: ContactSectionProps) {
                   <div>
                     <h4 className="font-medium text-lg">{t(item.title)}</h4>
                     <p className="text-muted-foreground">{
-                      
                      ["email", "phone"].includes(item.title) ? item.description : t(item.description)
                     
                     }</p>
